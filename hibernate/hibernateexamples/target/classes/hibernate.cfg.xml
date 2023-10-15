@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		 <!-- 1. connection details -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/ormsession</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		
+		
+		
+		
+		<!-- We use dialect to provide information about which
+			database we are using, we are using mysql -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- This property enables us to update the
+			table everytime the program runs-->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+	  
+		
+		
+		
+		
+		<!-- List of XML mapping files -->
+		<!-- path of a mapping file, for us its our
+			Student class and Address class which is a POJO -->
+		<mapping class="com.excelr.persistance.Employee"></mapping>
+
+	</session-factory>
+</hibernate-configuration>
