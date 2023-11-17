@@ -1,0 +1,55 @@
+
+java ---> to run java --> jvm
+
+javascript:-
+------------
+    javascript ---runs in the browser -- >chrome, firefox, microsoft edge,...etc
+
+    ECMAScript -->provides standard to javascript.
+  Es5
+  ES6,
+  Es7
+
+how to declare to variable:-
+-----------------------------
+   var a, let a, const a .
+
+ typescript:-
+ ------------  
+   It provides type to the javascript.
+   It is the superset of javascript
+   
+   Typescript is open source.
+   Typescript simplifies JavaScript code, making it easier to read and debug.
+   Typescript is a superset of ES3, ES5, and ES6.  
+   Typescript will save developers time.
+   Typescript is nothing but JavaScript with some additional features.
+
+
+   function add(a, b)
+   {
+
+   }
+
+   add(2,2);    // develpoper are facing problem.
+   add("hi", 2);  // dont know what type to pass. // there is not type checking.
+
+   =======================================================================
+
+   installation:-
+   ----------------------
+   npm i -g typescript
+   tsc -v
+
+   
+
+   tsc demo.ts -w  (automatically update change to javasript).
+
+===============================================================================
+
+var   ---> 
+
+let    --->  block scope,
+
+const  --> conts days = 7
+          const month = 12

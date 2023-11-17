@@ -1,0 +1,333 @@
+framework:-
+--------------
+   half built solution
+   solution for commonly occuring problems.  (in each and every application same logic is required).
+
+   eg:-
+   -----
+   ---- 3 tier architecture---
+frontend  ---->   backend  <----> database
+                        data access
+      flipkart   --->
+      amazon
+      onbanking
+
+   storing and access the data in the database in a common practice,  (in all application it is there)/
+
+     flipkart --> order details.
+     bank    --> transaction details.   
+
+=========================================================================================
+ORM framework:-  (database framework ) --> it makes data access easy
+-----------------
+   Object Relation Mapping 
+
+without orm:-  (java + sql)
+------------------
+   we need to write java and sql code
+String selectSql = "SELECT * FROM employees";   // sql + java
+try (ResultSet resultSet = stmt.executeQuery(selectSql)) {
+    // use resultSet here
+}
+
+
+with orm:-
+------------
+    we write only java code,
+   ORM maps java objects to the database table.
+
+   Adv:-
+   ------
+     database independent queries
+
+
+   how it maps:-
+   ---------------
+
+   class name   ---------- table name
+   variable name -------- column name
+   object       --------- rows
+       
+
+class employees         -----------------------> table name
+{
+    int id;             -----------------------> column name
+    String name;
+    String dept;
+
+}
+Employee e1 = new Employee(1,'sachin','hr');  ---> rows/ records
+Employee e2 = new Employee(2,'rahul','dev');
+Employee e3 = new Employee(3,'manish','hr');
+
+   ---> below is converted to database table 
+Employee
+id   name   dept
+1    sachin  hr
+2   rahul   dev
+3   manish  hr
+
+===========================================================================
+some of the orm framework:-
+-----------------------------
+      3rd party framework
+   1. hibernate  (popular )
+   2. ibatis 
+   3. top link
+
+
+============================================================================
+Hibernate is a orm framework:-
+--------------------------------
+
+Hibernate example program for insert document:-
+---------------------------------------------------
+
+step 1:-
+---------
+file --> new -- java project --> next --> finish
+
+step 2:-
+---------
+  for java project we have only java library, 
+  to work with hibernate, we need to install hibernate library.
+
+  download the hibernate-core jar file from mvn repository.
+
+step 3:-
+--------
+   add the hibernate-core jar file to buid path 
+    right click on project- > build path--> configure build path --> library -> add external jars --> apply --> finish
+
+step 4:-
+---------   
+  files required for project,
+   
+      hibernate.cfg.xml   -----------------  (database configuration details + hibernate details + mapping details)
+      persistance class (pojo class)   --->  It is a noraml which has setter and getter, this class only going to map to table
+      main app                       -------> hibernate configuration code , to run hibernate program
+   
+
+step 5:-
+----------
+    Pojo class
+
+ It is a java class, which has variable declaration and setter and getter.
+
+hibernate annotation:-
+--------------------------
+ @Id --> It compuslary, It indicates it is a primary key
+ @Table  --> specifies the table name
+ @Column  ---> specifies the column name
+ @Entity  ---> table is mapping with database
+
+
+===============================================================================================
+   home :-
+      ---> rooms
+      ---> doors
+      ---> power supply
+      ---> electricity
+
+  project :-
+  -------------
+      compile.
+      test cases.
+      jar / war
+
+      
+
+maven project:-
+-----------------
+  -> It is used to build the project.
+  -> It can manage the project dependency.
+  ->
+
+maven repository:-
+------------------
+ central repository  ---> https://mvnrepository.com/
+  remote repository  -->  with the orginization ( private server,)with in the orginization they can use
+  local repository   --> in local system inside .m2 folder
+
+ =========================================================================================== 
+
+steps using maven project:-
+----------------------------
+step 1. create a maven add hibernate dependency in pom.xml file
+
+
+<dependencies>
+	 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.4.32.Final</version>
+</dependency>
+
+ </dependencies>
+
+
+
+
+ step 2:-
+ -----------
+      3 files required:-
+      ------------------------
+
+      entity class   ------------->  Persistance class
+      hibernate.cfg.xml   --------> database connection details + hibernate details + mapping details
+      main app
+
+   1. Entity class
+    -----------------
+
+    It is pojo class, which has variable declaration , setter and getter.
+
+    @Entity  -->
+    @Id      -->
+
+step 3:-
+----------
+
+
+
+=============================================================================================================
+
+example 2:-
+-------------
+  reterive demo.
+
+step 1:-
+----------
+     create a maven project.
+pom.file:-
+--------------
+
+ <properties>
+	   <maven.compiler.source>1.8</maven.compiler.source>
+	   <maven.compiler.target>1.8</maven.compiler.target>
+ </properties>
+ 
+ <dependencies>
+	   
+	   	 <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.4.32.Final</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>8.0.33</version>
+</dependency>
+
+
+step 2:
+----------
+   entity class:-
+   ---------------
+
+   package com.excelr.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Employee {
+
+	@Id
+	private int id;
+	private String name;
+	private String dept;
+	private int salary;
+	private int age;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
+}
+
+step 3:-     (connection details + hibernate details + mapping details )
+-----------
+    hibernate.cfg.xml
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+javascript  vs  typescript:-
+-----------    -----------
+no type           data type
+                 (code rediability)
+
+
+=============================================
+Angular js      vs   Angular
+----------          -----------
+
+javascript             typescript based
+based
+
+open source           open source
+single                single page
+
+----------------------------------------------
+
+  const HonmeComponent =  ()=>
+   {
+      javascript code
+    
+     return (
+         jsx (view)
+     )
+
+   }
+
+==================================================
+steps to create project , and start the server.
+
+ng new demo1,
+cd demo1
+ng serve.
+
+string interprolation 
+  {{}}  ---> one way data binding
+
+
+========================================
+
+
+every component has , 
+  template       ------> view    ---> <>
+  typescript     -----> component  --> 
+
+
+===============================================================
+Directive:-
+-----------------
+  It is instructions to the dom,
+     3 types.
+       1. component   ( above the compoent it is written, how the component should process)
+       2. structural  (It tells how the dom elemnets should manipulate,)
+       3. attribute.
+
+
+  2. structural:-
+          It tells how the dom elemnets should manipulate,
+
+          ng-if
+          ng-for
+          ng-switch
+
+====================================================================================
+task:-
+---------
+     speed = 0
+
+   accelerate      brake  
+     
+     +5             -5
+
+===================================================================================
+
+normal bootstrap:-
+-------------------
+npm -g i bootstrap
+
+paste the link link style.css:-
+--------------------------------
+@import "~bootstrap/dist/css/bootstrap.css."
+
+
+
+
+
+ng-bootstarp:-
+------------------
+ng add @ng-bootstrap/ng-bootstrap
+
+==========================================================
+task 1:-
+----------
+enter your salary:
+    6000
+
+--> 6000+ 2% of salary -> 6400
+ increase the salary by percentage:-
+ drowdown: 1 to 20:
+
+ 
+ task 2:-
+ ----------
+     gold rate calculator:-
+     -----------------------
+
+     grams: 10
+     rate :5000
+     making chargaes:  22
+     tax  :   6
+         calculate
+            
+       50000 --> gold rate
+       13000  --> making charge rate
+       5000   --> tax
+
+       total = 68000
+
+ --------------------------------------------------------
+
+ steps to add bootstrap:-
+ ------------------------
+    --->npm i bootstrap
+
+    ---> paste the link inside style .css
+         @import "~bootstrap/dist/css/bootstrap.css"
+
+------------------------------------------------------------   
+angular pipes:-
+life cycle:-
+-----------------------------------------------------------
+routing:-
+----------
+     It is used for navigation.
+
+     const routes: Routes = [];// inside this array , we can configure the route
+
+
+steps:-
+-----------
+1.   ng new routingdemo
+   routing yes
+   css
+   
+2. remove all code from app.html    
+   ng server
+
+3. create two components,
+      first
+      second
+
+4. routing configuration in app.routin.module.ts file:
+   
+     const routes: Routes = [
+  { path: 'first-component', component: FirstComponent },
+  { path: 'second-component', component: SecondComponent },
+];
+       
+5.  paste the code in app.component.html
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/first-component" >First Component</a></li>
+    <li><a routerLink="/second-component">Second Component</a></li>
+  </ul>
+</nav>
+
+
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>      
+
+
+

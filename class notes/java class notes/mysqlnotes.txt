@@ -1,0 +1,984 @@
+Data:-
+--------
+     -->information.
+       It can be any raw information.
+       eg:-
+          sport info, rail info, passenger info,..
+          newspaper
+
+Database:-
+-----------
+    --> Collection of similar information.
+      eg:-
+      ----
+         train database --> will have inforamation about train, station, stops, source , destination
+
+
+ DBMS:(Database Management System):-
+ -------------------------------------
+    Storing the data in the system,
+        adv:-
+        ----
+            backup
+            multi user login
+            data security        
+
+ RDBMS: Relational Database Management System:-
+ -----------------------------------------------
+    records are stored in the form of table and table will have some kind of relationship.
+
+    some of the RDBMS software:-
+    ---------------------------
+      1) mysql
+      2) oracle
+      3) postgres
+      4) sql server
+      5) IBM db2,.....
+
+
+SQL:-
+--------
+   --> Structured Query Language.
+   --> It is a query language, By using SQL, we can interact with database software.
+   --> Initial name of SQL is SEQUEL, (Structure English Query Langauge).
+   --> It is easy to learn, like english.
+   --> It is a command based language, every command has a meaning to the compiler.  
+
+SQL Sub languge:-
+--------------------
+DDL :- Data Definition Language
+DML :- Data Manipulation Language
+DQL : Data Query Language
+TCL  : Transaction Control language
+DCL : Data Control Language
+
+=============================================================================================
+In SQL Datas are Stored in the table:-
+
+      id   name    salary   -
+       1   sachin   30000
+       2   ravi     46000
+
+       It will have rows and columns,
+
+       to insert any records, first we need to have a table,
+
+       table -> It will have schema, (It tells what type of data will be store in the table)
+
+
+transaction table:-(schema)
+----------------------
+transactionid     amount    receiver   date
+
+
+employee table:(schema)
+---------------------------
+id    name   salary  designamtion   
+
+==========================================================================================================
+sql day2:-
+-------------
+
+sql sub language:-
+-----------------------
+
+DDL :- Data Definition Language
+DML :- Data Manipulation Language
+DQL : Data Query Language
+TCL  : Transaction Control language
+DCL : Data Control Language
+
+DDL :- Data Definition Language:-
+----------------------------------
+  It is related to table structure.
+
+  dr.cat
+  
+  d-drop
+  r-rename
+  c-create
+  a-alter
+  t-truncate.
+
+DML:- Data MAnipulation Language:-
+----------------------------------  
+   (data Manipulation like insert, update and delete)
+  insert
+  update
+  delete
+
+DQL:- Data Query Language:-
+-----------------------------
+    select :-
+
+        operators
+        sql clauses
+             where
+             group by 
+             having 
+             order by
+              distinct
+         sql functions
+               numeric functions
+               character functions
+               date functions
+               aggregate functions
+         sql subqueries
+         sql joins
+
+TCL:-   Transaction Control language
+-------------------------------------
+what is transaction..?
+      some thing + and - in the database, after successfull it needs to update to database.
+
+      commit :- commit is permanent saved.
+                once transaction is successfull, we can do the commit.
+
+      rollback: if transaction is failed, we can rollback.
+                once we rollback it will go to the last commited state.
+
+DCL:- Data Control Language:-
+-------------------------------
+     It is all about, giving and taking out the access.
+
+Grant
+Revoke
+
+============================================================================================
+  mysql installer:-
+  ------------------
+   server
+   shell
+   workbench
+
+
+DDL:-
+--------
+  dr.cat:-
+  --------
+   d-drop  :- It complete removes the table from database.
+   r-rename : It will change the table name. (renaming the table name)
+   c-create :- It creates a new table in the database.
+   a-alter :   It is used to modify the table structure.
+              4 different modification.
+                 1. alter add :- adding an new column
+                 2. alter drop :- deleting the column
+                 3. alter rename :- changing the column name
+                 4. alter modify :- changing the datatype and size
+
+   t-truncate
+
+    
+    datatype:-
+    ------------
+       --> int
+       --> decimal
+       --> varchar(size)
+       --> date
+     
+day 3:-
+-----------
+ sql operator:-
+ ---------------
+    arithemtic operator  -> + , - , *, / ,
+    relational operator  > , < , >= , <= , == , <>   
+    logical operation    and , or, not 
+    special operator      in , any , all ,exits, between, like 
+
+
+Sql clauses:-
+---------------
+    --> where
+    --> order by
+    --> group by
+    --> having
+  
+    --> distinct
+
+   1) where clause:-
+   -------------------
+         It is used to filter the records based on the given condition. 
+          
+          eg:-
+          -- where clause
+select * from emp where department ="hr";
+select * from emp where department ="developer";
+select * from emp where department in ("developer","tester","ceo","analyst");
+select * from emp where department = "hr" and age > 30;
+select * from emp where department = "hr" or age > 30;
+select * from emp where department <>"hr";
+select * from emp where age>=30;
+select * from emp where age>30;
+
+
+ 2) order by clauses:-
+ -----------------------
+      By using order by clauses, we can sort the data in ascending or descending order.
+        
+     By default it will sort in ascending order,
+
+        keyword:-
+        ----------
+            asc --> ascending
+            desc --> descending   
+
+  eg:-
+  ---
+      -- order by clause
+select * from emp;
+select * from emp order by age;
+select * from emp order by age asc;
+select * from emp order by age desc;
+select id, name from emp order by name;
+
+select id, name,age from emp 
+where age>25
+order by name ;
+
+select id, name,age from emp 
+where age>25
+order by name desc;
+
+----------------------------------------------------------------------------
+sql functions:-
+----------------
+    It will do some task.
+
+     2 types of function:-
+     ----------------------
+       1) scalar function.
+       2) aggregate function.
+
+
+     aggregate function:-
+     ----------------------
+          ->  It performs the aggregation operation.
+          -> It takes multiple row as a input and returns the single row as a output.
+          eg:-
+             count 
+             min
+             max
+             sum
+             avg
+
+           Note: function topic we will learn seperate  
+-----------------------------------------------------------------------------
+3) group by clauses:-
+  --------------------
+           prerequisite,  --> need to know about aggregate function.
+
+          --> common rows we can make them into one group,
+
+          --> By using group by clause, we can group the rows based on column condition.
+
+           (very important) --> after grouping call the aggregate function.
+
+     
+     eg:-
+     ------
+       -- dept wise sum salary
+select department, sum(salary) from emp group by department;
+select department, count(id) from emp group by department;
+select department, max(salary) from emp group by department;
+
+update emp set salary=67000 where id = 5;
+
+select department, count(id) , min(salary), max(salary), sum(salary) from emp group by department;
+
+
+
+
+4) having clause:-
+------------------
+   It is used to filter the group by result.
+     eg:-
+     ----
+        -- group by and having
+  select department, count(id) from emp
+  group by department
+  having count(id) > 1;
+  
+  select department, count(id) from emp
+  group by department
+  having count(id) > 1
+  order by department;
+  
+=================================================================================================
+
+between operator:-
+------------------
+ -- range the values , both are inclusive
+select * from emp where salary between 40000 and 70000;
+
+Like Operator:-
+-----------------
+  It is a regular expression.
+    It has 2 operators 
+        1) % percentage. 
+        2) _ underscore.
+
+
+      1) % percentage:-
+      -------------------
+           It indicates zero, one , or more charcater.
+
+       2) _ underscore:-
+       -------------------
+            It indicates exactly one character.
+
+
+   eg:-
+   -----
+     -- pattern search
+select * from emp where name like 's%';
+select * from emp where name like '_a%';
+select * from emp where name like '__h%';
+select * from emp where name like '%n';
+select * from emp where name like '%i_';
+select * from emp where name like '%a%';         
+  
+==============================================================================================
+sql constraints:-
+--------------------
+   applying conditions to the table, so that it will enter only valid data.
+
+    different types of constraint:-
+    ------------------------------
+       primary key
+       foreign key
+       not null
+       unique
+       default 
+       check
+
+
+  How to application constraint to the table,:-
+  ---------------------------------------------
+     2 ways we can apply.
+         1) column level constraint
+         2) table level constraint
+
+
+  1) column level constraint:-
+  -------------------------------
+      declaring the constraint immediately after the table name.
+  
+   2) table level constraint:-
+   ----------------------------  
+      declaring the constraint , after declaring all the columns.
+       
+
+
+
+day 4:-
+---------------
+
+constraint:-
+---------------
+   primary key:-
+   ---------------
+   ->It uniquely identifies a record in the table.
+   -> It will not allow duplicate, 
+   -> there can be only one primary in a table
+   -> primary key cannot be null
+
+
+eg:-
+
+  use onlinesession;
+
+create table product1
+(
+id int primary key,
+name varchar(30),
+price int 
+);
+
+desc product1;
+
+insert into product1 values(2,'bottle',230);
+insert into product1(id,name) values(4,'soap');
+
+-- primary key cannot be null
+insert into product1(name,price) values('juice',80);
+
+select * from product1;
+
+
+ 
+2) not null constraint:-
+--------------------------
+   the column cannot be null.
+
+   eg:-
+   ----
+
+   use onlinesession;
+
+create table product2
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30),
+price int
+);
+
+select * from product2;
+insert into product2 values(1,'laptop','electronics',67000);
+ -- it will insert
+insert into product2(id,name,price) values(2,'headphone',4000);
+ 
+ -- this is will not insert
+insert into product2(id,category,price) values(3,'electronics',6000);
+
+
+3) check constraint:-
+-----------------------
+    It is used to apply a condition to the columns,
+    It will insert a record, only when the condition is satisfied.
+
+
+4) default constraint:-
+-----------------------
+    It will give default values , when it has not given any value.
+
+
+    eg:-
+    ----
+
+    create table product3
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30) default 'mens clothing',
+price int check(price>0)
+);
+
+desc product3;
+select * from product3;
+insert into product3 values(3,'laptop','electronics', -45);
+ -- it will insert, it will take default value
+insert into product3(id,name,price) values(2,'headphone',6000);
+    
+
+ 5)unique constraint:-
+ -----------------------
+   ->It will allow only unique values.   
+
+  difference bewteen   primary key and unique key:-
+  ---------------------------------------------------------
+
+  primary key                          unique key
+  ---------------                ------------------
+  only 1 primary key               we can have more than one 
+  for a table                      unque key column
+
+  It uniquely identifies            email field, contact field are unique
+  a record.
+    id column
+                                     It can allow one null value.
+
+
+   eg:-
+   ----
+   use onlinesession;
+
+create table product4
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30) default 'mens clothing',
+price int check(price>0),
+barcode int unique,
+contactno int unique
+);
+
+desc product3;
+select * from product4;
+insert into product4 values(4,'laptop','electronics', 45000,11112,987882);
+
+insert into product4(id,name,category,price,barcode) 
+   values(6,'laptop','electronics', 45000,11116);
+   
+   
+   
+foreign key:-
+--------------
+   -> By using foreign key , we can make table relatioship. (link the tables)
+   -> foreign key is not but, primary key of another table.
+   -> It will allow duplicate values.
+
+entity --> object 
+          Employee,Student,Dept, Car,...
+
+
+suppose we want to store employee information:-
+--------------------------------------------------
+id  name   salary   age   deptid deptname  manager
+1   sachin  60000   23     100      hr     ramesh
+2   kumar   7000    21     100      hr     ramesh
+3   ankit   80000   25     100      hr     ramesh  
+
+drawbacks:-
+-----------------------
+   insert problem:-
+               when we add employee we should also add dept information.
+  
+   update problem:-
+          to update dept info, it will take multiple row update.
+               
+    delete problem:-
+        if we delete employee entity , it will delete dept entity also.
+        when all the employee are delete, then there is no dept exists.
+
+    each entity should be stored in a seperate table.and tables can have relationship 
+    with another table.
+        relationship:-
+        -----------------
+         1 : 1  ---> employee and dept   --> id
+         1 : m  -->   employee and project    ,  employee and contactno
+         m : 1  --->   project  and employee     contactno and employee
+         m : m   -->   customer and product
+
+
+foreign key:-
+--------------
+   -> By using foreign key we can make relatioship with another table.
+   -> It is used to link the table.
+
+   -> foreign key is nothing but, primary key of another table.
+   -> foreign key will allow duplicate.
+
+
+  eg:-
+  -----
+    use onlinesession;
+
+create table department
+(
+id int primary key,
+name varchar(30),
+manager varchar(30)
+);
+
+insert into department values(101,'developer','sourab');
+select * from department;
+create table employee
+(
+id int primary key,
+name varchar(30),
+age int,
+salary int,
+dept int ,
+constraint fk2 foreign key (dept) references department(id) on delete cascade
+);
+
+insert into employee values(5,'e',31,67000,101);
+select * from employee;
+delete from department;
+
+delete from department where id=100;
+
+drop table employee;
+drop table department;
+
+===============================================================================================
+sub queries:-
+--------------
+      -> It is nothing but query inside another query.
+      
+      why we need sub query..?
+      --------------------------
+      display all the employees whose salary is greather than sachin salary.
+
+     here we don't know sachin salary, to find sachin salary we use sub query.
+
+
+     syntax:-
+     ---------
+       Outer Query(          ----------> second exceute
+             inner query()   -----------> first execute   (finds what is sachin salary)
+       )
+          
+       first it will execute inner query, the output of inner query will be used by outer query.
+
+    types of sub query:-
+    ---------------------
+        1) single row sub query.
+        2) multi row sub query.
+
+     single row subquery:-
+     ----------------------
+        the inner query returns single row as a result.
+
+     multirow sub query:-
+     ----------------------
+        the inner query returns multiple row as a result.    
+
+
+   in   --> in means equal to
+   any  --> from the list any of one value , to be either greather or lesser.
+   all  --> from the list all the value to be greather or lesser.
+
+
+values:-
+-----------
+1,2,3,4,5,6,7
+           
+                in (1,4,6,10,5)      --->   1,4,6,5
+
+                > any (3,5,6)       ---> 4,5,6,7
+                > all (3,5,6)        ----> 7
+
+================================================================================ 
+set operator:-
+--------------
+    union all
+    union
+    minus
+    intersect
+
+
+    eg:-
+    -----
+    create table bangaloreorder
+(
+id int,
+name varchar(30),
+contactno varchar(30)
+);
+
+create table chennaiorder
+(
+id int,
+name varchar(30),
+contactno varchar(30)
+);
+
+insert into bangaloreorder values(1,'anil','99123');
+insert into bangaloreorder values(2,'sourab','12345');
+insert into bangaloreorder values(3,'mahesh','56789');
+
+insert into chennaiorder values(1,'anil','99123');
+insert into chennaiorder values(2,'sourab','56712');
+insert into chennaiorder values(3,'kumar','99123');
+
+
+
+  union all:-
+  -------------
+    It takes data from both tables including duplicates
+
+ eg:-
+ -----
+select * from bangaloreorder
+union all
+select * from chennaiorder;
+
+
+union:-
+---------
+   It takes data from both table , It will remove duplicate rows.
+
+eg:-
+-----   
+select * from bangaloreorder
+union 
+select * from chennaiorder;
+
+
+minus:-
+----------
+    It is not supported in mysql
+
+intersect:-
+-----------
+  It will select common row.
+
+eg:-
+-----
+  select * from bangaloreorder
+intersect
+select * from chennaiorder;    
+      
+
+=================================================================================================
+
+sql joins:-
+------------
+   ->by using joins we can reterive the data from different tables.
+   -> for join we need to have one common column.
+
+   types of join:-
+   -----------------
+     cross join
+     self join
+     
+     inner join
+     left join
+     right join
+     full join   ---> (it is not suppored in mysql, we can achieve using set operator).
+
+
+
+schema:-
+------------
+ create table address
+(
+id int,
+streetName varchar(30),
+city varchar(30),
+pincode varchar(30)
+);
+
+
+create table customer
+(
+id int,
+name varchar(30),
+contactNo varchar(30),
+email varchar(30),
+addressid int
+);
+
+insert into address values(101,'btm','bangalore','560084');
+insert into address values(102,'hsr','chennai','560084');
+insert into address values(103,'old street','bangalore','5677084');
+insert into address values(104,'new street','kolkata','120084');
+insert into address values(105,'dollar layout','bangalore','78764');
+
+insert into customer values(1,'ankit','12345','ankit@gmail', 103);
+insert into customer values(2,'rahul','12345','rahul@gmail', 105);
+insert into customer values(3,'mahesh','12345','mahesh@gmail', 110);
+insert into customer values(4,'sourab','12345','sourab@gmail', 101);
+insert into customer values(5,'kumar','12345','kumar@gmail', 120);
+
+
+
+
+
+inner join:-
+--------------
+   select only the common condition,
+
+   -- inner join
+select * from customer
+inner join 
+address on customer.addressid=address.id;
+
+-- with out alias
+select customer.id,customer.name,address.id, address.streetname, address.city
+from customer
+inner join
+address on customer.addressid=address.id;
+
+-- using alias
+select cust.id, cust.name, addr.id, addr.streetname, addr.city
+from customer cust
+inner join
+address addr on cust.addressid=addr.id;
+
+-- inner join 
+select cust.id, cust.name, addr.id, addr.streetname, addr.city
+from customer cust
+inner join
+address addr on cust.addressid=addr.id;
+
+-- inner join
+select * from customer cust
+inner join
+address addr on cust.addressid=addr.id;
+
+-- left join
+select * from customer cust
+left join
+address addr on cust.addressid=addr.id;
+
+-- right join
+select * from customer cust
+right join
+address addr on cust.addressid=addr.id;
+
+
+-- full join
+select * from customer cust
+left join
+address addr on cust.addressid=addr.id
+union 
+select * from customer cust
+right join
+address addr on cust.addressid=addr.id;
+
+=====================================================================================
+day 7:-
+-------------
+ sql functions:-
+ -----------------
+     2 types of functions:-
+     ----------------------
+     1. scalar function.
+     2. aggregate function.
+
+     1.scalar function:-
+     --------------------
+          -> for each row we will get a output.
+
+          3 types of scalar function:-
+          -----------------------------
+            1. numeric function.    ---> round , ceil, trun
+            2. string/charcater function.  --> length, substr, upper, lower,..
+            3. date function.   --->adddate, getday, getmonths, getYear,....
+
+     2. aggregate function:-
+     -------------------------
+         -> It will take multiple row as input, and gives the single row as a output.       
+
+
+
+eg:-
+-----
+  charcater function:-
+  -------------------
+  use onlinesession;
+
+select * from emp;
+
+select sum(salary) from emp;
+select min(salary) from emp;
+select max(salary) from emp;
+select count(salary) from emp;
+select avg(salary) from emp;
+
+select name, length(name),upper(name),lower(name), substr(name,3),substr(name,2,3) from emp;
+select name,salary from emp;
+
+select upper('safan');
+select lower('SAfan');
+select substr('welcome all', 2,6);
+
+
+--------------------------------------------------------------------------------------------
+
+date functions:-
+------------------
+
+create table employee20
+(
+id int primary key,
+name varchar(30),
+salary decimal(10,2),
+dept varchar(30),
+dob date,
+doj date
+);
+
+insert into employee20 values(1,'ankit',45000, 'hr','1990-10-30','2023-04-20');
+insert into employee20 values(2,'rahul',55000, 'developer','1996-06-21','2021-04-20');
+insert into employee20 values(3,'karan',90000, 'developer','1986-04-10','2022-04-20');
+insert into employee20 values(4,'manish',34000, 'hr','1994-11-30','2019-04-20');
+insert into employee20 values(5,'sourab',60000, 'tester','2000-11-30','2020-04-20');
+
+select * from employee20;
+select name, doj, year(doj) from employee20;
+select name, doj, year(doj) from employee20 where year(doj)>=2022;
+select name, doj, year(doj) from employee20 where year(doj)<2022;
+
+select name, doj, day(doj), month(doj), monthname(doj) from employee20;
+select name, dob, day(dob), month(dob), monthname(dob) from employee20;
+
+select * from employee20;
+update employee20 set dob='1994-11-23' where id=4;
+
+ -- select the employee who has born on november
+select name, dob , day(dob), month(dob) from employee20 
+where month(dob) = 11;
+
+ -- select the employee who has born on november
+select name, dob , day(dob), month(dob) from employee20 
+where month(dob) = 11
+order by day(dob);
+
+select name, dob, day(dob), month(dob),monthname(dob),dayofyear(dob),dayofweek(dob),dayofmonth(dob) from employee20;
+
+select now();
+select current_date();
+select name, dob, datediff(current_date(), dob) from employee20;
+
+select name, doj, datediff(current_date(), doj)/30 as month from employee20;
+
+=========================================================================================================
+
+view in mysql:-
+------------------
+   view is a virtual table.
+
+  when to use view...?
+  ---------------------
+     when have more columns, and want to hide few columns.
+    eg:-
+    -----
+       hide some audit columns,
+
+
+  create view newemp as select id,name,dept from employee20;
+
+select * from newemp;
+
+==================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+                                  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

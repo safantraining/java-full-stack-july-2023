@@ -1,0 +1,401 @@
+Day 2:-
+-----------
+
+1. what is JVM..? why we need it..?
+2. what is JRE..?
+3. features of java...? / adv of java..?
+4. what is wrapper class..?
+5. what is type casting..?and its types...?
+    byte b=100;
+    byte b=256;
+
+   byte 2* 2* 2* 2* 2*  2*  2 -1
+       2  4  8 16 32 64  128
+
+     byte-1
+   2         -1
+      8-1
+    2        -1
+
+      -128 to 127
+
+
+6.  java naming convention,  
+      variables, methods, class,
+
+7. what is packgaes..? package rules..?     
+   what is the first line of the java program...?   
+
+
+day 3:-
+----------
+
+8. --> explain about main function...?
+ --> who will call the main method..?
+ --> how many ways we can write the main method..?
+ --> can we overload main function..?     
+
+
+9. some of built in keywords.?
+
+     for, if, switch, else, class, package, super,this, final,static.....
+   
+10. what is static in java...?
+11. different class and interface...?
+12. differeence between class and abstract class..?
+13. difference between abstract class and interface..?
+    
+
+     class    vs               interface:-
+     ----------                --------------------
+ 1.it can have                 In interface by default,all the variable are public static final
+ variables, methods,           all the methods are public and abstract.
+ constructor                    It will not have the constructor
+
+ we can create the object       we cannot create the object.
+
+
+ class                     vs   abstract class:-
+ -------------------           ---------------------------------
+it will have                      It will have normal and abstract method
+noraml method
+
+we can have variable           abstract class can also have variable.
+
+It will have constructor       It wil have constructor.
+
+we can create the object         we cannot create the object.
+---------------------------------------------------------------------------------------------
+Exception handling:-
+--------------------
+  what is exception..?
+  why we need exception handling..?
+  types of exception..?
+  difference bewteen error and exception..?
+  what is the difference checked and unchecked exception..?
+  can we have a catch block without try block..?
+  how many catch block a try block can have..?
+  can we have try block inisde try block..?
+  what is the use of finally block..?
+  list some of the built in exception class name...?
+  how to create a custome exception..?
+  which is the super class of the exception class..?
+
+  refer indiabix for exception handling mcq question... coading snippit
+   https://www.indiabix.com/java-programming/exceptions/  
+
+  ========================================================================================
+  array and string prepare self...
+  =================================================================================================
+  collection framework.
+
+  what is collection...?
+  different the below,...
+   list :
+   set :
+   map :
+   queue :
+   difference between arraylist and vector..?
+   what is generic collection..?
+      ArrayList<Integer> marks = new ArrayList<Integer>();
+      
+
+
+
+====================================================================================================
+  java 8 new featues:-
+  -----------------------
+      stream api
+      functional interaface
+      lamda express
+      method reference
+      in built method reference.
+
+=================================================================================================
+important topics:-  core java
+---------------------
+fundamentals of java, --> arrays and strings, keywords,...
+oops,
+exception handling,
+collection framework
+java 8 new features, (functional interface, stream api,...).
+
+==================================================================================================
+
+need to be aware:-
+----------------------
+file handling
+Multithreading, (life cycle of thread, synchronization,...)
+jdbc 
+================================================================================================
+
+spring and spring boot , with orm :
+----------------------------------------
+================================================================================================
+
+Collection framework:-
+------------------------
+List 
+Set    ---->
+Map 
+Queue 
+
+
+Object class:-
+------------------
+  It is super class for all the java class,
+     some of the methods of object class,..
+         toString(),
+         hashCode(),
+         equals()
+
+ --> equals and hashcode method,
+       when two objects are same, then the hashcode will also be same,
+
+   -->customer,employee, book,..etc adding the objects into  the collection, search and sort,...
+
+ differeence comparable and comparator....
+
+ comparable            vs         comparator:-
+ --------------------      ---------------------
+
+ single sorting                  multiple sorting.
+ 
+ orginal object is               seperate class 
+ modified
+
+1. what is collection..?
+2. what is differrence between collection and collections.
+3. which is the root interface of collection.
+4. difference between Iterator vs ListIterator.
+5. difference between list and set.
+6. difference between  arraylist and linkedlist
+7.  "            "     arraylist and vector.
+8  what is legacy class.
+9. whta is addAll, retainAll,removeAll,
+10. different between comparable and comparator 
+11. what is equals and hashcode..?
+12. what is the use of contains().
+13. what is size().
+14. how to delete all the elements from the collection...?
+15. difference between HashSet and LinkedHashSet..?
+16.difference bewteen arraylist/linkedlist   vs  LinkedHashSet..
+17. what is treeset,and is the default sorting order..?
+18. how to sort treeset in descending order...?
+19. how to get all the key in map.?
+20. how to get all the values in map..?
+21. what is entrySet returns ...?
+22. Map is a child interface of Collection Interface or not...?
+23. list the sub interface of Collection...?
+24. how to add the element in map...?
+25. how to get the element based on key..?
+====================================================================================
+
+java 8 new features:-
+-------------------------
+functional interface,
+default and static method.
+lamda expression.
+method reference.
+built in functional interface.
+stream APi, --> intermediate and terminal operation
+Optional class.
+DataTime api.
+
+
+1. what is functional interface..?
+2. what is @Functional interface annotation..?
+3. what is Anonomys inner class..?
+4. what is lamda expression..?and it syntax...?
+             () => {}
+5. what is default method..?
+6. what is static method..? 
+7. overriding rules in inheritance..?   
+8. in lamda expression what arrow symbol indicates (->);
+9. rules for lamda expression.   
+10. what is method reference..? 
+11. types of method reference...?
+12. builtin funtional interface...?
+13. what is stream api, why we use it..?
+14. difference between stream and collection...?
+15. what is intermediate and terminal operation..?
+16. what is optional class...? why we use it..?
+=========================================================================================
+practice arrays and string coading questions...
+-------------------------------------------
+file handling, jdbc, mutithreading,..
+-----------------------------------------
+
+1. what is jdbc? why we use..?
+2. what is API..?
+3. steps to connect java application with database..?
+4. what is the return type of executeQuery() method.
+5. what statement we can execute in executeQuery()..? // select stmt.
+6. which package we have to import to work with jdbc..?
+7. which is the default package to java class..?
+8. what is the difference between statement and preparedStatement..?
+9. how will yu load the driver class...?
+10. what is the name of type 4 driver..?
+11. list the all the 4 driver...?
+=============================================================================================
+multithreading:-
+---------------------
+  1. life cycle of thread.
+  2. how to create a thread in java...?
+  3. which is the best way to create the thread.
+  4. what is the work of start() method...?
+  5. in which package Thread class is available...?
+  6. explain lang package..and its some of its classes?
+  7. what is multitasking..?
+  8. what is difference between runnable and running state..?
+  9. what is blocked state..?
+  10. what is sleep method..? 
+  11. what is thread synchronization..?
+  12. what is the use of wait()..?
+  13 what is inter thread communication..?How to achieve it..?
+  14. what is Daemon Thread..? 
+  15. what is Thrad priority , and how to set the priority to the thread, and what is the priority value range..?
+  16. what is the default priority value..?
+  17. how to set the thread name...?
+  18. how to get currently executing thread...?
+  19. what is dead state..?
+  20. which method will resume the wait() method...?
+
+===========================================================================================
+File Handling:-
+--------------------
+   java.io package,...
+
+1. what is stream in java..?
+2. what are types of stream...?
+3. explain byte stream and character stream...?
+4. explain some of the classes of byte and character stream..? 
+5. how to create a file inside a folder...?
+6. how to check whether file or folder is exists..?
+7. what is FileReader class...?
+8. difference between fileReader vs BufferedReader..?
+9. what is use of flush() method..?
+10. what is close() method()...?
+11. differeence between read() and readLine()...?
+12. what is PrintWriter class..?explain print and write method..?
+
+======================================================================================
+spring framework:-
+---------------------
+
+spring boot:-
+----------------
+   layered architecture:-
+   -----------------------
+
+   repository layer.
+   service layer.
+
+
+
+
+Questions:-
+--------------
+
+1. difference between spring and spring boot...?
+2. why we need spring framework..?
+3. spring modules...?
+        spring core  ---> core module/ DI (dependency Injection) / IOC (Inversion Of Control)
+        spring data  ---> It is going to access the data from database
+        spring web   ---> to create web application including rest ful web services
+        spring AOP   --> Aspect Oriented Programming,
+        spring security -->
+4. what is loosely coupled...?   
+5. what is IOC container..?   
+6. How to configure java beans in spring...? // 
+7. what is Autowiring...?
+8. what is @Component annotation...? and its types...?
+    
+      @Component ---> It will configure the bean for the class, Employee --> bean name --> employee
+     class Employee
+     {
+     }
+9. what is use of ID annotation...?
+10. what is the use of @Column annotation..?    
+     class Employee
+     {
+
+        @Id
+        int id;
+
+        @Column("/empname)  -->                         Employee
+        String name;                                    id    empname
+     }
+
+
+
+11. how to generate auto increment value in spring data jpa..?
+     @GeneratedValue(strategy.GenerationType.Identity)   // strategy will change for different database
+
+
+12. what is use of lombok..?
+13. what is @Getter & @Setter..?
+14. what is @Table annotation...?
+15. what is crudRepository
+16. what is JPARepository
+17. difference between CrudRepositoy vs JPARepository...?
+18. what is queryMethods...?how to custome querys...?
+     
+     class Product
+     {
+        private int id;
+        private String name;
+        private int price;
+        private String category;
+
+
+     }
+
+         crud operation:-
+         -----------------
+             built in:-
+             -----------
+              get by Id:-
+              -------------
+                findById()
+             
+              get All products:-
+              ------------------  
+                findAll()
+             
+              save product:-
+              ------------------
+                save()
+
+              delete product:-
+              ------------------ 
+                existsById()
+                delete()
+
+             update product:-
+             -------------------
+              existsById()
+                save() 
+            
+             customeQuery:-
+             ----------------
+             List<Product> findByCategory(String category);
+	Product findByName(String name);
+	List<Product> findByPriceGreatherThan(int price);
+	List<Product> findByPriceLessThan(int price);
+	
+	List<Product> findByPriceGreatherThanAndCategory(int price,String category);
+	List<Product> findByNameStartsWith(String price);
+	List<Product> findByNameContains(String price);
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

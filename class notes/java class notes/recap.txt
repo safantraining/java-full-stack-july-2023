@@ -1,0 +1,137 @@
+full stack:-
+-----------------
+
+
+frontend --> user interface
+             technologies.
+
+             html,css, js, react , bootstarp, angular, 
+             js --> browser
+             js --> with the help of node, it runs outside the browser.
+
+backend   --> java  / python / .net  / php               
+             (choose framework to develope backend)  --> It provides template, which removes boiler plate code.
+             hibernate, 
+             spring 
+             spring boot  (complete application development framework)
+             
+             business logic 
+
+             technologies:- (java)
+             ----------------
+                   (practically)
+              1.java programming (j2se) / core java:-
+                   1. language fundamental  ( condition stmt , looping , array, string)
+                   2. oops
+                   3. exception handling , custome exception.
+                   4. collection framework.
+                   5. java 8 new features.
+                        stream api
+                        lamda express
+                        functional interface.
+                        data and time api
+
+
+                  (concept + practically optional  )
+                file handling
+                multithreading
+                jdbc.
+            
+             framework:-
+             --------------
+                framework is a template, all the common problems are all ready written.
+
+                hibernate :-  It is a database framework. (It solves database logic)
+                spring    :-  It is a application development framework 
+                               By using spring frameowork we can develope java enterprise application.
+                 
+                 spring boot:-
+                               enterprise application:-
+                               --------------------------
+                               business transaction
+                               (multiple user roles of login).
+                
+                 adv of frameowork:-
+                 --------------------
+                    1. code modularity ( different packages)
+                    2. code rediability (easy understand by other developers.).
+                    3. It provides a guidelines, how to write the code.   (coding guidelines)
+
+
+
+database  --> to store data permanently, we use database.
+              mysql 
+
+==============================================================================================================================
+Hibernate:-
+-----------
+    It is orm frameowork ,
+     Object Relation Mapping.
+
+
+     JDBC:-
+     ---------
+      Java database connection .
+  
+   to connect with database, we have to write,
+  java code + sql queries.
+ Statement stmt=con.createStatement();  
+ResultSet rs=stmt.executeQuery("select * from emp");  
+
+code inside --> try and catch
+
+ORM:-
+-------
+  only java code we can write,  It will automatically creates the sql code.
+
+  adv:-
+  ------
+     It will generate database independent queries.
+
+
+ How orm maps java objects to database tables:-
+ -----------------------------------------------    
+
+-------------------------------------------------------------------------------------------------------------------
+
+ class Employee       --------------------------------> table name
+ {
+    int id;             -----------------------------------> column name
+    String name;
+    String dept;
+ }
+
+Employee e1 = new Employee(1,'sachin','hr');    ------------------> rows
+Employee e2 = new Employee(2,'ramesh','dev');
+
+
+
+      the above if we map to database , it will be,
+
+  Employee
+  ----------------------------------
+  id          name            dept 
+  1        sachin            hr
+  2        rahul             dev   
+
+=========================================================================================  
+  
+  files to run hibernate program:-
+  ---------------------------------
+ 
+  1. persistance class/ pojo class/ entity class:-
+    ----------------------------------------------
+    It is a simple java class, which has private variable, setter and getter and constructor.
+
+  2. hibernate.cfg.xml:-
+  ---------------------
+          It is a setting file ( we can keep our options.).
+
+         3 details we provide here:-
+         -------------------------- 
+          a. database connection details.  (username, password, url,driverclass)
+          b. hibernate property.        (showsql, format sql, hbm.2.ddl)                --> acknowledge
+          c. mapping file details.      --> persistance class details.
+            
+  
+    

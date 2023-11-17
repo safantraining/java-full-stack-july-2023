@@ -1,0 +1,554 @@
+practices:-
+------------
+
+create database onlinesession;
+
+use onlinesession;
+
+-- create table
+create table employee
+(
+id int,
+name varchar(30),
+dept varchar(30),
+salary decimal(10,2)
+);
+
+ -- remove
+ drop table employee2;
+ 
+-- renaming the table name
+rename table employee to emp;
+
+
+-- see the table structure
+describe emp;
+desc emp;
+
+-- alter add 
+alter table emp add column (age int);
+
+-- alter drop
+alter table emp drop age;
+
+-- alter rename
+alter table emp rename column dept to department;
+
+ -- alter modify
+ alter table emp modify department varchar(20);
+ 
+-- truncate, table structure remain all the records will be deleted.
+ truncate table emp;
+ 
+
+
+dml:-
+-----------
+desc emp;
+
+ -- dml operation (insert, update , delete)
+  
+  -- insert  (insert a new record)
+   insert into emp values(1,'sachin','hr',60000.76,31);
+   insert into emp values(2,'ravi','tester',51000,28);
+   insert into emp values(3,'sourab','hr',40000,30);
+
+-- select (reterive the data from the table (*) asterick means select all the column)
+  select * from emp;
+  select id from emp;
+  select id,name,department from emp;
+  
+ -- insert few values  (insert a new record)
+ insert into emp(id,name) values(4,'ankit');
+  insert into emp(id,name,age) values(5,'rahul',32);
+  
+-- update:- (modify the existing record)
+ update emp set department='developer',salary=90000 where id > 3;
+ update emp set age = 24 where id=4;
+ 
+ 
+=======================================================================================
+
+use onlinesession
+
+select * from emp;
+select id, name,salary from emp;
+
+select id,name,salary, salary+5000 from emp;
+
+-- alise (given some name to the column) --short name
+select id,name,salary, salary+5000 as bonus,salary/30 as perdaysalary from emp;
+
+-- where clause
+select * from emp where department ="hr";
+select * from emp where department ="developer";
+select * from emp where department in ("developer","tester","ceo","analyst");
+select * from emp where department = "hr" and age > 30;
+select * from emp where department = "hr" or age > 30;
+select * from emp where department <>"hr";
+select * from emp where age>=30;
+select * from emp where age>30;
+
+
+-- order by clause
+select * from emp;
+select * from emp order by age;
+select * from emp order by age asc;
+select * from emp order by age desc;
+select id, name from emp order by name;
+
+select id, name,age from emp 
+where age>25
+order by name ;
+
+select id, name,age from emp 
+where age>25
+order by name desc;
+
+-- aggregate functions 
+select count(id), min(salary), max(salary),sum(salary),avg(salary) from emp;
+
+select department from emp group by department;
+
+-- dept wise sum salary
+select department, sum(salary) from emp group by department;
+select department, count(id) from emp group by department;
+select department, max(salary) from emp group by department;
+
+update emp set salary=67000 where id = 5;
+
+select department, count(id) , min(salary), max(salary), sum(salary) from emp group by department;
+
+-- group by and having
+  select department, count(id) from emp
+  group by department
+  having count(id) > 1;
+  
+  select department, count(id) from emp
+  group by department
+  having count(id) > 1
+  order by department;
+  
+
+select * from emp;
+
+-- range the values , both are inclusive
+select * from emp where salary between 40000 and 70000;
+
+-- pattern search
+select * from emp where name like 's%';
+select * from emp where name like '_a%';
+select * from emp where name like '__h%';
+select * from emp where name like '%n';
+select * from emp where name like '%i_';
+select * from emp where name like '%a%';
+
+===================================================================================================
+
+primary key:-
+------------------------
+
+use onlinesession;
+
+create table product1
+(
+id int primary key,
+name varchar(30),
+price int 
+);
+
+desc product1;
+
+insert into product1 values(2,'bottle',230);
+insert into product1(id,name) values(4,'soap');
+
+-- primary key cannot be null
+insert into product1(name,price) values('juice',80);
+
+select * from product1;
+
+
+not null:-
+----------
+
+use onlinesession;
+
+create table product2
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30),
+price int
+);
+
+select * from product2;
+insert into product2 values(1,'laptop','electronics',67000);
+ -- it will insert
+insert into product2(id,name,price) values(2,'headphone',4000);
+ 
+ -- this is will not insert
+insert into product2(id,category,price) values(3,'electronics',6000);
+
+
+check and default constraint:-
+--------------------------------
+create table product3
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30) default 'mens clothing',
+price int check(price>0)
+);
+
+desc product3;
+select * from product3;
+insert into product3 values(3,'laptop','electronics', -45);
+ -- it will insert, it will take default value
+insert into product3(id,name,price) values(2,'headphone',6000);
+ 
+
+ unique key:-
+ --------------
+
+ use onlinesession;
+
+create table product4
+(
+id int primary key,
+name varchar(30) not null,
+category varchar(30) default 'mens clothing',
+price int check(price>0),
+barcode int unique,
+contactno int unique
+);
+
+desc product3;
+select * from product4;
+insert into product4 values(4,'laptop','electronics', 45000,11112,987882);
+
+insert into product4(id,name,category,price,barcode) 
+   values(6,'laptop','electronics', 45000,11116);
+
+
+========================================================================================
+entity --> object 
+          Employee,Student,Dept, Car,...
+
+
+suppose we want to store employee information:-
+--------------------------------------------------
+id  name   salary   age   deptid deptname  manager
+1   sachin  60000   23     100      hr     ramesh
+2   kumar   7000    21     100      hr     ramesh
+3   ankit   80000   25     100      hr     ramesh  
+
+drawbacks:-
+-----------------------
+   insert problem:-
+               when we add employee we should also add dept information.
+  
+   update problem:-
+          to update dept info, it will take multiple row update.
+               
+    delete problem:-
+        if we delete employee entity , it will delete dept entity also.
+        when all the employee are delete, then there is no dept exists.
+
+    each entity should be stored in a seperate table.and tables can have relationship 
+    with another table.
+        relationship:-
+        -----------------
+         1 : 1  ---> employee and dept   --> id
+         1 : m  -->   employee and project    ,  employee and contactno
+         m : 1  --->   project  and employee     contactno and employee
+         m : m   -->   customer and product
+
+
+foreign key:-
+--------------
+  
+  eg:-
+  -----
+    use onlinesession;
+
+create table department
+(
+id int primary key,
+name varchar(30),
+manager varchar(30)
+);
+
+insert into department values(101,'developer','sourab');
+select * from department;
+create table employee
+(
+id int primary key,
+name varchar(30),
+age int,
+salary int,
+dept int ,
+constraint fk2 foreign key (dept) references department(id) on delete cascade
+);
+
+insert into employee values(5,'e',31,67000,101);
+select * from employee;
+delete from department;
+
+delete from department where id=100;
+
+drop table employee;
+drop table department;
+
+
+=====================================================================================
+
+
+use onlinesession;
+
+create table bangaloreorder
+(
+id int,
+name varchar(30),
+contactno varchar(30)
+);
+
+create table chennaiorder
+(
+id int,
+name varchar(30),
+contactno varchar(30)
+);
+
+insert into bangaloreorder values(1,'anil','99123');
+insert into bangaloreorder values(2,'sourab','12345');
+insert into bangaloreorder values(3,'mahesh','56789');
+
+insert into chennaiorder values(1,'anil','99123');
+insert into chennaiorder values(2,'sourab','56712');
+insert into chennaiorder values(3,'kumar','99123');
+
+select * from bangaloreorder
+union all
+select * from chennaiorder;
+
+select * from bangaloreorder
+union 
+select * from chennaiorder;
+
+select * from bangaloreorder
+intersect
+select * from chennaiorder;
+
+
+===========================================================================
+
+joins:-
+-----------
+
+create table address
+(
+id int,
+streetName varchar(30),
+city varchar(30),
+pincode varchar(30)
+);
+
+
+create table customer
+(
+id int,
+name varchar(30),
+contactNo varchar(30),
+email varchar(30),
+addressid int
+);
+
+insert into address values(101,'btm','bangalore','560084');
+insert into address values(102,'hsr','chennai','560084');
+insert into address values(103,'old street','bangalore','5677084');
+insert into address values(104,'new street','kolkata','120084');
+insert into address values(105,'dollar layout','bangalore','78764');
+
+insert into customer values(1,'ankit','12345','ankit@gmail', 103);
+insert into customer values(2,'rahul','12345','rahul@gmail', 105);
+insert into customer values(3,'mahesh','12345','mahesh@gmail', 110);
+insert into customer values(4,'sourab','12345','sourab@gmail', 101);
+insert into customer values(5,'kumar','12345','kumar@gmail', 120);
+
+select * from address;
+select * from customer;
+
+-- inner join
+select * from customer
+inner join 
+address on customer.addressid=address.id;
+
+-- with out alias
+select customer.id,customer.name,address.id, address.streetname, address.city
+from customer
+inner join
+address on customer.addressid=address.id;
+
+-- inner join 
+select cust.id, cust.name, addr.id, addr.streetname, addr.city
+from customer cust
+inner join
+address addr on cust.addressid=addr.id;
+
+-- inner join
+select * from customer cust
+inner join
+address addr on cust.addressid=addr.id;
+
+-- left join
+select * from customer cust
+left join
+address addr on cust.addressid=addr.id;
+
+-- right join
+select * from customer cust
+right join
+address addr on cust.addressid=addr.id;
+
+
+-- full join
+select * from customer cust
+left join
+address addr on cust.addressid=addr.id
+union 
+select * from customer cust
+right join
+address addr on cust.addressid=addr.id;
+
+==================================================================================================
+
+functions:-
+----------------
+
+use onlinesession;
+
+select * from emp;
+
+select sum(salary) from emp;
+select min(salary) from emp;
+select max(salary) from emp;
+select count(salary) from emp;
+select avg(salary) from emp;
+
+select name, length(name),upper(name),lower(name), substr(name,3),substr(name,2,3) from emp;
+select name,salary from emp;
+
+select upper('safan');
+select lower('SAfan');
+select substr('welcome all', 2,6);
+
+
+create table employee20
+(
+id int primary key,
+name varchar(30),
+salary decimal(10,2),
+dept varchar(30),
+dob date,
+doj date
+);
+
+insert into employee20 values(1,'ankit',45000, 'hr','1990-10-30','2023-04-20');
+insert into employee20 values(2,'rahul',55000, 'developer','1996-06-21','2021-04-20');
+insert into employee20 values(3,'karan',90000, 'developer','1986-04-10','2022-04-20');
+insert into employee20 values(4,'manish',34000, 'hr','1994-11-30','2019-04-20');
+insert into employee20 values(5,'sourab',60000, 'tester','2000-11-30','2020-04-20');
+
+select * from employee20;
+select name, doj, year(doj) from employee20;
+select name, doj, year(doj) from employee20 where year(doj)>=2022;
+select name, doj, year(doj) from employee20 where year(doj)<2022;
+
+select name, doj, day(doj), month(doj), monthname(doj) from employee20;
+select name, dob, day(dob), month(dob), monthname(dob) from employee20;
+
+select * from employee20;
+update employee20 set dob='1994-11-23' where id=4;
+
+ -- select the employee who has born on november
+select name, dob , day(dob), month(dob) from employee20 
+where month(dob) = 11;
+
+ -- select the employee who has born on november
+select name, dob , day(dob), month(dob) from employee20 
+where month(dob) = 11
+order by day(dob);
+
+select name, dob, day(dob), month(dob),monthname(dob),dayofyear(dob),dayofweek(dob),dayofmonth(dob) from employee20;
+
+select now();
+select current_date();
+select name, dob, datediff(current_date(), dob) from employee20;
+
+select name, doj, datediff(current_date(), doj)/30 as month from employee20;
+
+==================================================================================
+
+view :-
+-------
+create view newemp as select id,name,dept from employee20;
+
+select * from newemp;
+
+=============================================================================
+
+
+
+
+
+
+
+
+
+   
+   
+   
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 

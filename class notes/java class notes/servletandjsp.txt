@@ -1,0 +1,294 @@
+Day 1:-
+---------
+servlet:-
+----------
+   why we use servlet..?
+   ---------------------
+   by using servelt we can create web applications in java.
+
+   Servlet is a server side programming language, which runs inside the server.
+
+   By using servlet, we can create clinet server architecture.
+
+client:-  (It is the frontend, what user sees, -> It runs in the browser.)
+Server:-  (It is backend, which is used to process the clinet request.)
+
+to run core java:- main method
+                   public static void main(String args[])  --->
+
+to run servlet and jsp:- we need server
+                         eg:- tomcat server.                  
+
+=================================================================================
+
+tomcat sep up:- (only once)
+-----------------
+      download and install the tomcat.
+
+
+
+Day 2:-
+---------
+steps to create a web application in eclipse:-
+----------------------------------------------
+    file -> new -> dynamic web project --> next -> check generate web.xml --> finish
+
+  project structure:-
+  --------------------
+    javaresource --(backend servlet code)
+    build
+    src web-app  ---   (front end code)
+                  index.html
+                  login.html
+
+
+RequestDispatcher:-
+---------------------
+  By using RequestDispatcher, It can send the request from one resource to another resource.
+  the resource can be , html, jsp, or servlet.
+
+
+  Day 3:-
+  ----------
+    Servlet is used to create dynamic web application.
+    dynamic web application:-
+    ------------------------
+          content will be different to each user.
+
+   
+   Servlet (I):-     [introduced to create about web application]
+   -----------
+      Servlet is used to create dynamic web application.
+      It is an interface,
+        which has life cycle methods
+            init()
+            service().
+            destroy().
+
+         GenericServlet (abstract class)
+         HttpServlet   (abstrcat class)
+
+  abstrcat class GenericServlet implements Servlet  [server vendor created this class]
+  {
+                                                    //It is protocol independent, supports, ftp,http,...
+  }
+
+  abstrcat class HttpServlet implements Servlet     [server vendor created this class]
+                                                 // protocol dependent (It supports only httpprotocol)
+  {
+      
+  }
+
+
+class MyClass extends HttpServlet
+{
+
+}
+
+
+Life Cycle of Servlet:-
+--------------------------
+   init()            -----------------------> It is called only one , when we start the server
+   service() // doget/dopost   -------------> when ever we send a request, it is going to be called
+  destroy             ----------------------> only once we stop the resource,
+
+========================================================================================================
+day 4:
+Http protocol is state less protocol:-
+------------------------------------------
+stateless:-
+-----------
+   the server has no memory to store the data about previous request, 
+   Each request will take as new request.
+
+   session management technique:-
+   --------------------------------
+   -> particular intervial of time, between client and server.
+   
+   different techniques of session management:-
+   ---------------------------------------------
+   1. cookies
+   2. http session
+   3. hidden form field.
+   4. url rewriting
+
+  Cookies:-
+  ----------
+    -> It is a session management technique.
+    -> It is small piece of information, which is stored as key and value pair.
+    -> Cookies is store on the browser.
+    -> cookie is created by server.
+         syntax:-
+         -------
+          Cookie ck = new Cookie(key,value);
+
+
+==========================================================================
+JSP:-
+-------
+   -> Java Server Pages
+
+   servlet:-
+   ----------
+
+   .java file
+       --> html code inside java
+
+    JSP:-
+    -----
+       .jsp file  (It is like html document)
+       --> java code inside html.
+
+     why we need jsp:-
+     ------------------
+        --> In servlet, It is difficult to java code and html code,
+        --> JSP provides easy syntax to write java code and html code.  
+        --> JSP is dynamic compilation, when ever we modify the jsp , it will automatically
+             reload. (jsut we need to save the document).
+
+      
+      compilation of servlet:-
+      ------------------------
+         .java file  --> compile --> .class file  --> load to jvm --> output.
+
+      compilation of jsp:-
+      ---------------------
+           .jsp  file ---> run  ---> .java file   ---> compile -->  .class file  --> load to jvm --> output.
+                                      (servlet)
+
+     
+
+       At the end, JSP is nothing but servlet, but in jsp it is easy to write the code compared to servlet.
+
+==============================================================================================================
+
+  JSP = html + java
+     
+     html -> to write html code, we have html tags,
+     java -> to write java code, we need to use JSP scriptlet tag.
+
+
+  scriplet tag:-
+  ----------------
+       By using scriptlet tag, we can write java code inside JSP file.
+
+           3 types of scriptlet tags
+           ----------------------------
+             1. scriptlet  <%  %>
+             2. declaration  <%!  %>
+             3. expression  <%=   %>
+
+
+
+
+
+JSP implicit objects:-
+----------------------
+out, resquest, response,httpSession,page,...
+
+=====================================================================================================
+1. scriptlet tag:-
+---------------------
+    <% scriptlet %>
+  the code inside the scriplet tag, will go inside the service method of servlet.
+
+     
+     
+     
+       service(HttpServletRequest request , HttpServletResponse response)     service ==> doget/dopost
+       {
+               PrintWriter out = response.getWriter();
+
+               // scriptlet tag goes here..
+       }
+
+
+
+
+2. declaration tag:-
+---------------------
+     <%! declaration %>
+  the code inside the declaration tag, will go outside the service method of servlet.
+
+     
+       // declaration tag goes here..
+     
+       service(HttpServletRequest request , HttpServletResponse response)
+       {
+               PrintWriter out = response.getWriter();
+
+               
+       }
+
+
+
+3. Expression tag:-    
+-------------------
+    <%= %>    (= is nothing but out.println)
+
+eg:-
+-----
+     <%!  int a=1;%>
+      
+    <%=  Expression %>
+
+    It is short notation for,
+       <%! out.println (a) %>
+       <%= a%>                 
+
+
+=================================================================================
+JSP directives:-
+--------------------
+    directive will give additional information about the jsp page.
+
+   types of directive:-
+   -----------------------
+   1. page directives
+   2  include directive
+
+
+  1. page directive:-
+  --------------------
+    syntax:-
+    --------
+
+    <%@ page  %>
+     attribute of page directive
+        import
+        bufferSize
+        contentType
+
+
+    <%@ page import="">
+    
+
+ 2. include directive:-
+ -------------------------
+      <%@ include file="footer.html" %>
+      <%@ include file="header.html" %>
+
+
+Jsp action tage:-
+-------------------
+  useBean:
+
+       <jsp:useBean id="obj" class="com.excelr.ValidateUser" scope="application"></jsp:useBean>
+
+
+=============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

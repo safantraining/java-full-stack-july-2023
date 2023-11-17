@@ -1,0 +1,175 @@
+
+spring framework:-
+--------------------
+
+hibernate framework:- (It is only a database framework.)
+                                 to write database logic .
+
+spring framework:-  It is a application development framework.
+                    By using spring framework, we can develope the entire application.
+                   
+                   why we use spring framework..?
+                -----------------------------------
+                    to development enterprise application
+                      eg:-
+                      -----
+
+                      web application ------->  website,
+                      enterprise application  ---> excelr, onbanking, zomato,... (backend support team).
+
+
+                    what is spring framework..?
+                    -----------------------------
+                      Spring is a java based 3rd party framework, which is used to develope
+                      enterprise application easily, Spring framework is considered as frameworks
+                      of frameworks, because in spring we can include some other framework like 
+                      hibernate, web mvc,...etc
+
+                     It was founded by rod johnson.  
+                     In spring we can include, some other framework also,(database, web framework)
+============================================================================================================
+
+zomato:-
+-------------
+ modules:-
+ ----------
+    login
+    profile
+    orders
+    payment
+    restraunt
+
+
+flipkart:-
+-------------
+   login
+   cart
+   orders
+   wishlist
+   payment
+   product
+
+
+spring:-
+----------
+    spring modules:-
+    ----------------
+     -> spring core (objects creation , dependency injection)
+     -> spring aop  :Aspect Oriented Programming
+                  (we should not mix business logic , with non business logic.), email, opt services
+     -> spring data: ( how to access data from database)
+     -> spring web  (how to create web application)
+
+
+->spring core:-
+---------------
+module 1:-
+---------------
+   spring core / dependency injection / IOC (Inversion of control)
+
+ what this module says..?
+----------------------------
+Don't create the object, inside another java class, instead spring will create the object for us.
+
+what happens if we create the object:-
+------------------------------------
+        It becomes tightly coupled.  (changes are not easily accepted.)
+
+     eg:-
+     --------
+        class Restraunt                   class Tea
+        {                                {
+                                               Tea()
+                                                {}
+          Tea t = new Tea();
+                                            void price()
+
+        }                                 }
+
+
+     
+chages made in one class will force the developer to change in another class also,this becomes tight coupled.
+
+==============================================================================================================
+
+
+dependency Injection:-   (It will remove dependency between the classes)
+------------------------
+    -> By using dependency injection , we can remove the dependency between the class. (so that it becomes loosely coupled).
+    
+      How to remove the dependency..?
+      --------------------------------
+       2 ways 
+       ------------
+          1. setter injection.
+          2. constructor injection.
+   
+   
+===================================================================================================================
+
+what is container..?
+-----------------------
+    container is reponible to manage the object   
+       manage means, --> creation of object
+                         manage object state,
+                         destruction of objects.
+:-
+ 
+    core java ---> main method is the container. 
+    servlet & jsp ---> server is the container.  
+    spring     ---> IOC is the container
+
+==================================================================================================
+
+IOC :- Inversion of Control:
+------------------------------
+   It will manage the objects in spring.
+      2 two of IOC:
+      ---------------
+        1.BeanFactory  (out dated)
+        2.ApplicationContext
+
+
+==================================================================================================================
+
+
+class Employee
+{
+    void disp()
+    {
+
+    }
+}
+
+
+class App 
+{
+    main ()
+    {
+     Employee e1 = new Emplyee();
+     e1.disp();  
+
+
+    }
+
+}
+
+=======================================================================
+2 ways of dependency Injection:-
+---------------------------------
+  i) setter injection.
+  ii) constructor injection.
+
+
+3 way to configure dependency injection
+-----------------------------------------------
+-->  xml based.
+-->  java based.
+-->  annotation based.
+
+
+=================================================================================
+Autowiring:-
+--------------
+   It will inject the object dependency automatically.
+

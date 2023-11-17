@@ -1,0 +1,372 @@
+## day 51:-
+
+## spring web:-
+
+By using spring web , we can create web application including restful web services.
+
+web application:-
+
+---
+
+       client server architecture.
+
+restful web services:-
+
+---
+
+      paytm,gpay,phone pay:- service provider app .
+
+          the above app, uses different web services,eg:-
+               banking,booking,bill payment
+
+
+    Rest:-
+    ------
+       Representation State transfer.
+
+      - By using rest we can communicate with the server, to access the resource.
+
+      - Rest is not a protocol, It is an architecture style, to access the data
+       from the server.
+
+          How we can access the resource:-
+          ----------------------------------
+             Get    ---> get the resource from the server.
+             Post   --> Add a new resource to the server.
+             Put    --> update the resource to the server.
+             Delete  --> remove the resoure from the server.
+
+---
+
+## @Component:-
+
+    It configure the bean.
+
+    @Component
+        -----------> @Repository  [ data layer]  -----> how to access the data from database
+        -----------> @Service     [service layer (business logic)]
+        -----------> @Controller  [controller layer (handles the request and response)]/ presentation layer
+
+================================================================================================
+
+axis bank ---> xml/json ---- gpay ---> prepare view --->
+(data) (data + view)
+
+axis bank ---> xml/json ---- phonepay ---> prepare view --->
+(data) (data + view)
+
+# In Restful webservice, the request and response data will be in JSON format.
+
+## download postman:-
+
+we need postman , to the test the api endpoints.
+
+===========================================================================================================
+MVC:-
+
+---
+
+M-modal  
+ V-view
+C-controller
+
+M-modal:-
+
+---
+
+      It is the data, business logic
+
+V-view:-
+
+---
+
+      It is the presentation, what user sees,
+
+C-controller:-
+
+---
+
+      handles the request and response,
+        for each request the controller decides, for this request which model has execute.
+
+        login request will go to login model
+        booking request will go to Booking model
+
+        front office (recepnist) --> FrontController --> It only handles, all the incoming request.
+                                     FrontController --> DispatcherServelt.
+
+======================================================================================================
+stpes:-
+
+---
+
+    1) create a spring boot project.
+
+           select --> maven
+
+
+          group-> com.excelr
+          package-> com.excelr.projectname (optional)
+                   com.excelr
+
+
+        next --> select the module
+               spring web    ------------> finish
+
+2.  ## Note:-
+
+        always follow the base packgae structure.
+
+           com.excelr       ------> base package --> main app
+           com.excelr.controller
+
+    work of controller:-
+
+    ***
+
+         handles the request and response.
+
+         @RestController
+
+================================================================================  
+ HelloController:-
+
+---
+
+     package com.excelr.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.excelr.model.Calculation;
+
+@RestController
+public class HelloWorldController {
+
+    @GetMapping("/admin")
+    public String display()
+    {
+    	return "welcome admin ...";
+    }
+
+
+    @PostMapping("/add")
+    public String doOperation(@RequestBody Calculation calculation)
+    {
+    	int a = calculation.getNum1();
+    	int b= calculation.getNum2();
+
+    	int result = a+b;
+
+    	return "Result of Add : "+ result;
+    }
+
+    @PostMapping("/sub")
+    public String doOperationsub(@RequestBody Calculation calculation)
+    {
+    	int a = calculation.getNum1();
+    	int b= calculation.getNum2();
+
+    	int result = a-b;
+
+    	return "Result of Add : "+ result;
+    }
+
+}
+
+## modal class:-
+
+package com.excelr.model;
+
+public class Calculation {
+int num1;
+int num2;
+public int getNum1() {
+return num1;
+}
+public void setNum1(int num1) {
+this.num1 = num1;
+}
+public int getNum2() {
+return num2;
+}
+public void setNum2(int num2) {
+this.num2 = num2;
+}
+}
+
+=================================================================================
+
+## to run:-
+
+open postman:
+get --> we can call directly
+
+      post --> send the data in the body
+              --> body --> raw --> json
+
+## sample data:-
+
+{
+"num1":4,
+"num2":3
+}
+
+output:-
+
+---
+
+==========================================================================================
+
+## day 52:-
+
+Restapi with database:-
+
+---
+
+## steps:-
+
+stpe 1) --> create a starter project ,
+restapiwithdatabase (project name)
+maven (build type)
+com.excelr (package)
+
+                  dependencies:-
+                  ---------------
+                      spring web   (web application)
+                      spring data JPA (to access database)
+                      spring bootdev tools  (live reloading )
+                      mysql driver
+
+                      click --> finish
+
+step 2) fill the properties, 1) write data base configuration 2) server port (optional)
+
+#connection details
+spring.datasource.url= jdbc:mysql://localhost:3306/myprojectdb?useSSL=false
+spring.datasource.username= root
+spring.datasource.password= root
+
+#ddl table creation
+spring.jpa.hibernate.ddl-auto= update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+#server port
+server.port=8097
+
+## step 3:-
+
+      create the package structure.
+
+      com.excelr  --> base package
+      com.excelr.model
+      com.excelr.repository  [ data base logic] => this layer is complete abstraction
+      com.excelr.service     [business logic]
+      com.excelr.controller  [presentation] => handles the request and response.
+
+step 4:-
+
+---
+
+       create the entity class, and provides database mapping details.
+
+       Note:-
+       -------
+          @Id is the mandatory annotation, It is for primary key.
+
+          other annotation:-
+          ------------------
+          @Entity
+          @Table
+          @column
+          @GeneratedValue
+
+          @Lombok
+
+eg:-
+
+package com.excelr.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+//@Table(name = "emp")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Employee {
+
+    @Id
+    private int id;
+    private String name;
+    private String dept;
+    private double salary;
+    private int age;
+
+}
+
+## step 5:-
+
+Repository layer:-
+
+---
+
+      In Repository layer, we will write data base code,
+
+      In spring boot, we use JPArepository interface, which is complete abstraction,
+      no need to write the implementation, It provides built in methods to access the
+      data from database.
+
+      what we need to do..?
+      -----------------------
+        create interface which extends JPArepository or CrudRepository
+
+       built in interface:-
+       --------------------
+          crudRepository : provides crud operations
+          JPArepository  :  crud operations + paginations + sorting
+
+
+     eg:-
+     ----
+     package com.excelr.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.excelr.entity.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
+
+}
+
+## step 6:-
+
+    create the controller class.
+    which is used to handle the request and response.
+
+## day52:-
+
+repository layer --> to write database logic
+service layer ---> to write the business logic
+controller layer --> presentation
+
+=====================================================================================================
+task:-
+-------------
+  --> Cart
+  --> Item  ,
+  --> Customer,
+
+  ============================================================================================
+
+
+

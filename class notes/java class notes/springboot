@@ -1,0 +1,231 @@
+## spring boot:-
+
+    why we use spring boot..?
+    ---------------------------
+      -> In spring boot, zero configuration, every thing is auto configured.
+       (motto--> developer no need to waste time on configuration, instead foucus on business logic)
+
+      -> spring boot removes the boiler plate code from spring
+          (common code, --> database connection,etc,...).
+
+spring vs spring boot:-
+
+---
+
+1.  for developing web specially for restful web services.
+    application
+
+2.  developer need to write removes the boiler plate code.
+    plate code
+
+3.  primary feature is primary feature is autoconfiguration.
+    Dependency Injection
+
+4.  no inbuilt plugin It has inbuilt plugin  
+     (server and databased).
+
+5.  we have to write the dependency starter dependency
+    manually, with default configuration.
+    and add dependency manually,
+
+    =============================================================
+
+    steps to create spring boot project:-
+
+---
+
+3 options, 1) https://start.spring.io/
+
+          2) using STS ide (Spring tool suite)
+
+          3) in eclipse, add the STS plugin.
+
+          etc,...
+
+====================================================================================
+
+## spring data JPA:-
+
+By uisng spring data jpa, we can interact with database,
+top level framework, and spring data jpa is complete abstraction.(spring boot will provide the implementation).
+
+example:-
+
+---
+
+steps:-
+
+---
+
+1.  create a spring boot project. or start.spring.io
+
+    maven
+    java 17
+    java
+
+    package:-
+    com.excelr
+
+    next--> finish
+
+2.  ## fill the properties file:-
+
+    provide database configuration details.
+
+           #connection details
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/eveningbatch?allowPublicKeyRetrieval=true&useSSL=false
+    spring.datasource.username=root
+    spring.datasource.password=root
+
+#ddl table creation
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+3. give the package structure.
+
+   @springbootapplication
+   -------------------------> follow this base package
+
+   com.excelr ------------> base package which has @Springbootapplication
+   com.excelr.enity ----> model class/ entity class,
+   com.excelr.repository ---> database related code
+   com.excelr.service ---> business logic
+   com.excelr.controller --> web layer, request and response
+   com.excelr.exception --> custome exceptions,
+   com.excelr.utility --> some constants,..
+
+4. entity class:-
+
+---
+
+    It will have private variable,
+      setter and getter
+      default and parameter constructor.
+
+entity layer annotations:-
+
+---
+
+    (mandatory annotation)
+    @Entity  --> table will have relationship with database
+    @Id   ---> primary key,
+
+    @GeneratedValue(Strategy=GeneratedType.Identity) --> autoincrement
+
+    @Table  ---> define the table name
+    @Column  ---> define  the column name
+
+## 5: repository layer:-
+
+    this layer is complete abstraction.
+
+       we just declare the interface and extends with JPARepository interface.
+
+       save()
+       findAll()
+       findById(),...etc    all these methods are available.
+
+## 6:-
+
+    for using only database layer, we need command Line Runner.
+
+## layered Archtecture:-
+
+data layer
+business layer
+contronller layer
+
+============================================================================================
+
+## spring boot restful web services:-
+
+## web service:-
+
+    providing the web services,...in the form of api.  (application programming interface)
+
+    eg:-
+    -----
+      service providers apps,
+
+      paytm, gpay, phonePay,....
+
+html,css, js,bootstrap ----> frontend
+java,.net,python, ----> backend
+sql, nosql ----> database
+json, xml ---> data exchanging,
+
+=======================================================================================
+web application:- [client and server application]
+
+---
+
+## spring mvc:- (controller returns data + view)
+
+m-model ---> data (business logic)
+v-view ---> presentation (in normal mvc, we need some view technology,) jsp/ theamleaf,...
+c-controller ---> handles the request and respone. --> controller is responsible to make the view
+
+spring boot restful web service:- (controller returns data) / returns data as a json object.
+
+---
+
+m-model
+v-view --> here ther is no view technology,...
+c-controller ---> the controller returns the json object.
+
+    In restful, we will data as json format, we need to built the view, using frontend technologies.
+
+what is RESTful web services:-
+
+---
+
+REST:- REpresentation State transfer.
+
+      Representation:- data format, json/xml
+                                        {
+                                            id:1
+                                            name:"rohit",
+                                            "balance":78000
+                                        }
+
+      State :  ---> gives the current state.
+      transfer : --> data exchange.
+
+      It was founded by Roy Thomas fielding,-->the same guy has found http protocol.
+
+Rest is not a protocol, It is an architecture style, by using rest we can access the data from server.
+
+Rest annotations:-
+
+---
+
+@PostMapping ---> add the new data to the server.
+@GetMapping ---> Get the data from the server.
+@PutMapping --> update the date to the server
+@DeleteMapping --> delete the data from server.
+
+=========================================================================================================
+example program:-
+
+---
+
+1. simple spring boot web application
+
+steps:-
+
+---
+
+1.  create a spring starter project. / start.spring.io
+
+    maven
+    java 17
+    jar
+
+    spring web (to create restful webservice, comes with inbuilt server)
+
+2.  fill the properties file:-
+
+    for web application, we have to give the server port
+    server.port=8099

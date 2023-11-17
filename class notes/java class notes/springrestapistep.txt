@@ -1,0 +1,105 @@
+day54:-
+------------
+
+step1:
+----------
+create a spring starter project:-
+
+   spring data jpa
+   mysql driver
+   spring web
+   spring boot devtools
+
+
+step 2:-
+----------   
+
+fill the properties fill.
+    --> connection details
+    --> orm details
+    --> server port.
+
+
+ #connection details
+spring.datasource.url=jdbc:mysql://localhost:3306/myprojectdb?allowPublicKeyRetrieval=true&useSSL=false
+spring.datasource.username=root
+spring.datasource.password=root
+
+#ddl table creation
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+#server port
+server.port=8097
+
+
+step 3:-
+-----------
+
+create the package structure.
+ 
+ com.excelr   --> base package (which has main app, ) ->@SpringBootApplication
+ com.excelr.entity
+ com.excelr.repository
+ com.excelr.service
+ com.excelr.controller
+
+
+
+
+ step4:-
+ ---------
+    design the entity class. with proper mapping details.
+
+    employee-    table  ---> id, name, designation ,salary,age  addrid
+    address      table   --> id, streetname, city, pincode
+
+    create appropriate classes,
+
+       commonly annotatation used
+       ------------------------------
+
+       @Table
+       @Entity
+
+       @GenerateValue 
+       @Id
+       @Column
+
+       mapping purpose:-
+       -------------------
+         @OneToOne
+         @OneToMany
+
+
+step 5:-
+----------
+     repository layer.
+
+     This layer is complete abstraction, spring boot will do the implementation,
+     we need to create a interface and extends JPARepository.
+
+         JPARepository
+            CrudRepository --> save, findById, findAll, ...etc
+
+     Note:-
+     -------
+         for all the model class we need to create a repository interface.
+
+
+step 6:-
+----------
+     -> write the service layer (business logic).
+
+
+
+
+
+
+
+
+
+
+
+

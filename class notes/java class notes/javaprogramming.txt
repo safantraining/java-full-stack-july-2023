@@ -1,0 +1,1164 @@
+
+what is language..?
+   communication,
+      english, tamil, hindi,... 
+
+what is programming languages..?
+    communication with the system
+      computer knows --> (machine language) --> 0's and 1's
+
+    how many languages are there..? 2k langauges 
+
+popular langauges:-
+--------------------
+   c, c++, java, python, javascript, typescript,sql, no sql,....etc
+
+===============================================================================
+Evolution of programming languages:-
+-------------------------------------
+
+1. machine level language:-
+     It has only 0's and 1's --> It will be understand by system.
+
+     45  --> 010101
+     56  --> 101010
+     +   ---> 1100101
+          ---------------
+              10100010
+              ------------
+
+2. Assembly level language:-
+      It has introduced, phenomics and symbols,
+      add
+      sub,
+      mul,
+      div
+
+      45 add 56
+
+      assembler --> converts assembly level language to machine level language.
+
+3. High level language:-
+   ----------------------
+   c, cobol, fortan,....
+
+      c is the mother for all other programming language.
+      becasue c only has introduced , condition statemnt.
+
+      c has both high level and low level features, so later it termed as middle language.
+         high level feature --> if, if else, for loop,..etc.
+         low level features --> pointer
+
+4. Object Oriented Programming System:-
+---------------------------------------
+    By using oops , we can design the software based on real world objects.
+
+    why we make software:-
+    ---------------------
+       to make things automate,
+           (or)
+       to solve day to day life problem.  
+
+
+       online banking
+       zomata, swiggy
+       ola  
+
+    15 years back:-
+    -----------------
+       zomata, swiggy we dont have this,...
+
+       if we want to buy a food.
+
+       go to the restraunt.
+       check the menu
+       place the order.
+       do the payment.
+       collect the order
+
+       class restraunt
+       {
+          id,
+          name,
+          menu,
+          address,
+          contact no
+       }
+
+       class Customer
+       {
+         id,
+         name,
+         address,
+         contact,
+         profile
+      }
+       
+
+       java, python,.net,php,.....(oops based).
+
+   oops is programming paradigm, to design the software based on real world objects.    
+
+5. AI/ machine learning/ Data science:-
+----------------------------------------
+eg:- 
+    by having data insight, it will analysis.
+
+     loan approval,
+     youtube suggestions,
+     chatgpt,
+==========================================================================================
+Java:-
+----------
+ what is java..?
+  Java is a high level  object oriented programming language, 
+  which is secure and platform independent.
+
+  History of java:-
+  -------------------
+  founded by : James gosling
+  year       : 1995 it released ( 1991 started to research).
+  logo       : cofee cup symbol.
+  slogon     : write once run anywhere.
+  version    : jdk 1.0,..jdk 1.1, 1.2,..1.5, 1.7, 1.8,.. 11, 12,13 15,17,
+  company    : sun micro system
+
+  current company : oracle.
+  current version  : current version jdk 19.
+
+===========================================================================================
+
+
+
+
+before java,:-
+-------------------
+ c and c++ was there.
+ c and c++ is platform dependent.where as java is platform independent.
+
+platform dependent             vs                platform independent:-
+------------------------                    ----------------------------
+for each platform ,                         compile in one platform and run in any other platform
+we have to compile,                         (WORA) --> Write Once Run AnyWhere.
+and then we have to run
+
+===============================================================================================
+
+JDK,JVM, JRE :-
+---------------------
+
+JDK : Java Development Kit.
+--------------------------------
+                   JDK  =  JRE + Development tool
+                   
+                
+                         Development tool:-
+                                 javac
+                                 java
+
+
+
+JRE : Java RunTime Environment:-
+----------------------------------
+                  JRE:- It has inbuilt class,  + JVM
+                        Scanner
+                        System
+
+
+JVM: Java Virtual Machine:-
+-----------------------------
+   To understand the byte code.
+
+
+
+=============================================================================================
+HelloWorld program:-
+----------------------
+
+class Helloworld
+{
+   public static void main(String args[])
+   {
+     System.out.println("welcome to java");
+   
+   }
+}
+
+
+to save:-
+----------
+    ->class name should be the file name.
+      HelloWorld.java
+
+    javac filename.java
+
+    java  filename
+
+Note:-
+---------
+   what we should give the file name,
+  --> public class should be the file name.
+  --> There should be only one public class inside a java file.
+
+=====================================================================================================
+execution of JAVA Program:-
+---------------------------
+  source code --> compile --> byte code ---> load to jvm --> run the program
+                                            (main method is called)
+
+
+==========================================================================================================
+
+class CommandLineDemo
+{
+  public static void main(String args[])
+  {
+     System.out.println("hello world");
+     System.out.println("value at 0th index"+ args[0]);
+	 System.out.println("value at 1th index"+ args[1]);
+
+  
+  }
+}
+
+  javac CommandLineDemo.java
+
+  java  CommandLineDemo "sachin" "rahul"
+
+================================================================================================================
+
+features of java:-
+--------------------
+  1. simple:-
+  ------------
+      no pointer concept,
+
+  2. object oriented:-
+  --------------------        
+    We can design the software based on real world objects.
+
+  3. platfrom independent:-
+  -------------------------
+     It can run on any operating system. (WORA)
+     Write Once Run AnyWhere.
+
+  4. Architectural Netural:-
+  ---------------------------
+     It does not have any hardware or software specification. 
+      
+
+  5. Portable :-
+    ----------
+         portable =  platfrom independent + Architectural Neutral.
+
+  6. robust:-
+  ------------
+     A language is said to be robust, if it has good exception handling , and good memory management.
+   
+  7. centralised:-
+  ----------------
+      client server application.
+  
+  8.dynamic:-
+  --------------
+      dyamic web application, the content will change based on user login
+  
+  9. high performance:-
+    ---------------------
+      because of the above feature, java is high performance.
+  
+
+
+
+
+===================================================================================================
+
+Java classified:-
+-------------------
+   3 types:-
+
+   1.J2SE : java to standard edition  (core java)
+   2.J2EE : java to enterprise edition  (adv java)
+   3.J2ME : java to macro edition
+
+
+1.J2SE (core java)
+----------------------
+  desktop application.
+    eg:-
+    ----
+      notepad
+      ms office
+
+  adv:
+     without internet we can use
+
+  dis:
+    we cannot access it remotely.
+   
+
+2.J2EE (adv java):-
+--------------------
+    enterprise application  / dynamic web application.
+   (business application)
+     banking, ecommerce,
+
+     It has some business domain
+    
+   web application:-
+   ---------------------
+      1. static web application   --> html,css , bootstrap (frontend technologies)
+      2. dynamic web application  --> html,css, bootstrap, react/angualr + (java /python/ .net) 
+
+
+    1.static web application:-
+    -------------------------------
+      the content is same to all the user.
+
+    2. dynamic web application:-
+    ------------------------------
+      the content will change based on user login.
+
+      instagram
+      flipkart
+
+==============================================================================================================
+OOPs:-
+-------
+   By using we can design the software based on real world object/entities.
+
+   Classes and objects
+      4 features:-
+      -------------
+       1. abstraction.
+       2. inheritance.
+       3. polymoprhism.
+       4. encapsulation.
+        
+  Classes and Objects:-
+  ---------------------
+
+  class:-
+  -----------
+      --> class is a blue print of object.
+      --> It will have variable and methods
+                           (or)
+                       state  and behaviour
+       -> It is a logical entity
+
+  Object:-
+  ----------      
+       -> It is a physical entity
+        eg:-
+        ----
+           car, building.
+
+       -> It is a instance of a class.   
+
+       syntax to create a object:-
+       ------------------------------
+       classname objectname = new Classname(); 
+
+===============================================================================
+
+Variable demo:-
+-----------------
+   local variable             -----> declared inside the method
+                                      It can be accessed only with in that method only.
+
+   global or instance variable  ---> declared outside the method, inside the class. 
+                                      It can be accessed in any method inside the class
+  
+   static variable      ----> It is used for memory mgmt, 
+
+
+=====================================================================================
+Constructor:-
+---------------
+
+why we use..?
+   It is used to initilize the object.
+   It is the formal way to initilization the object.
+
+Rules of Writing a Constructor:-
+---------------------------------
+   1. same as class name.
+   2  It is like a method, but it does not return any value.
+   3. It is called automatically, when we create the object.
+   4. It cannot be static.
+
+types:-
+--------
+  1. default Constructor
+  2. parameterised constructor.
+
+
+Note:-
+----------
+while creating the object time, we the pass the values.
+
+By default , if we did not write any constructor, the compiler will add default constructor to the java class.
+
+Constructor overloading:-
+-------------------------
+
+	Account()
+	{
+		
+	}
+	
+	Account(int accNo,String name,String ifsc)  
+	{
+		
+	}
+
+ this keyword:-
+ -------------------
+   this is a keyword in java , which is used to refer the global variable/ current object.   
+
+
+=====================================================================================================   
+
+DAY -2:-
+--------
+    to run java program, load .class file to jvm
+    jvm calls the main methods, 
+      (after the main method call only , it will allocate the memory)
+       It will allocation the memeory for variable, objects,
+          head area--> objects are stored
+
+
+   during the class loading, before the main method class, it will allocation the memory for static property.
+   
+
+   static property belongs to ---> class reference.
+   non-static property belongs to --> object reference.
+
+        class      --->  objects
+     1  class ----> n number of objects
+      (static)            (non static)
+
+
+  static variable:-
+  -----------
+   when to make the variable as static:-
+   -----------------------------------------
+      when we want to share common property to all the objects, then we can declare the variable as static.
+
+
+  ===============================================================================================
+
+  identifier:-
+  --------------
+     It can be variable name,class name, method name.
+
+
+     class Employee ---------> Employee is the identifier
+     {
+        int id;     ----------> id is the identifier
+
+        void calculateSalary()  ----> calculateSalary
+        {
+
+        }
+
+     }      
+
+  Primitive data type:-
+  ---------------------------  
+   Integers:-
+   --------------
+     byte    ----- 1 byte  --- 8 bits
+     short    ---- 2 byte  --  16 bits
+     int      ---- 4 byte     32 bits
+     long     ---- 8 byte      64 bits
+
+      2* 2* 2* 2*   2* 2*   2  
+       4   4   16  32  64  128    -128 127
+         bits-1
+       2       -1
+
+    floating point:-
+    ---------------
+    float    4
+    double   8
+  
+  typecasting:-
+  --------------
+     converting from one type of another type.
+
+     size increasing order,
+
+     byte --->  short ---> int ---> long ---> float ---> double -->
+       1         2          4        8           4         8
+
+2 types:-
+-----------
+  1. implicit casting.
+  2. explicit casting.
+
+     implicit:-
+     -------------
+      -->  It will automatically done by compiler.
+      --> storing smaller value in larger data type.
+      --> no loss of data
+
+      
+      explicit casting:-
+      ------------------
+        --> compiler is not responsible, manually developer has to do.
+        --> storing larger value in smaller data type.
+        --> loss of data 
+
+
+================================================================================================
+Operators:-
+-----------
+   operatos are symbols, which is used to perform some operations, on the operands.
+
+     eg:-
+     ----
+         a            +              b
+         operand    operator      operand
+
+3 types of operators:-
+----------------------
+    1. unary operator.  ---> only one operand is used
+    2. binary operator. --> 2 operand is used  (minimum)
+    3. ternary operator  --> 3 operand is used 
+
+
+1.unary operator:-
+--------------------
+  increment / decrement opertor:-
+  -------------------------------
+   increment  ++
+             
+               pre      post 
+              ++a       a++
+  
+   
+   decrement  --
+               pre       post
+               --a       a--
+  
+
+
+  ++a    --> a=a+1  (first increment , and then assign the value)
+  a++    --> a=a+1  (first assign the value, then it will increment)
+
+  --a   --> a=a-1
+  a--   --> a=a-1
+
+
+
+  eg:-
+  -----
+    a=5
+  int b= ++a + a++ + ++a;
+          6  +  6  +  8
+
+
+  int b = a++ + a-- + ++a ;        
+
+
+  ========================================================================================
+  looping stmt:-
+  --------------
+    for
+    while 
+    do while
+
+
+    for loop:-
+    -----------
+       when to use for loop..?
+      ans:) when ever we have continition or repetation or series , then we can use for loop.
+
+      hello        1,2,3,...
+      hello        1,3,5,7,..
+      hello        2,4,6,8,...
+      ...
+
+      repetation    series
+
+
+     syntax:-
+     ------------
+            1                2             4
+       for(initilization ; condition ; increment / decrement)
+       {
+                   3
+               // stmt
+       }
+
+break and continue:-
+----------------------
+  break:-
+  ----------
+    when ever break statement executes, it will terminate the loop.
+
+ continue:-
+ ----------
+    when ever continue statement execute, it will skip that statement, and goes to the next iteration.
+
+
+================================================================================================
+
+for lop              and              while loop:-
+----------------------------------------------------------
+when we know the                     when we dont know the iteration.
+iteration, we                        we use while loop.
+use for loop
+
+
+while            and            do while
+----------------             ------------------
+entry control               exit control control
+loop
+
+                            even if the condition fails, it will execute one time.
+
+========================================================================================================
+Access modifier:-
+-------------------
+             with in the         with in the       outside the                   any where
+             class               package           package by sub class          in the application
+ 
+private     yes                   no                  no                                no
+
+
+default    yes                    yes                  no                                no
+
+
+protected   yes                   yes                  yes                                no
+
+
+public   yes                       yes                  yes                               yes
+
+
+==============================================================================================================
+OOPS:-
+-------
+    by using oops , we can create the software based on real world objects
+                                                        (car, building,..etc) 
+  
+   class      
+   objects
+
+   4 features:-
+   -------------
+     1. encapsulation.
+     2. inheritance.
+     3. polymorphism.
+     4. abstraction.
+
+
+class:-
+---------
+    It blue print to create the object.
+    It will have variable and methods,
+    It will have constructor.
+
+Objects:-
+---------
+   ->It is a instance of a class
+
+   syntax:-
+   ----------
+       Classname object = new Classname();
+
+           new --> allocation of memory.
+           Classname() --> constructor.
+
+=====================================================================           
+         
+Object super class:-   (parent class/ root class/ super class) --> to all the java class
+------------------------
+   -> By default, object class is the parent class/ super class for all the java class.
+    
+    Object class method:-
+    --------------------
+        -->toString,   ----> converts objects to string representation
+        --> hashcode
+
+
+     int    bonus  =   45000;
+     Employee emp =    new Employee(1,"rohit",45000);
+
+     sop(bonus); // 45000
+     sop(emp)   
+
+=====================================================================================
+Encapsulation:-
+----------------    
+    Encapsulation = data hiding + security
+
+    -->By using Encapsulation we can achieve data hiding,
+   
+
+   Declare all the variables/fields as private and access it using setter and getter method.
+    setter --> It will initilize the value,
+    gettr  --> It will return the value
+
+     int id;
+     String name;
+
+    setter:-
+    -----------
+         --> It will take one parameter , and returns nothing
+       
+        public void setId(int id)
+        {
+             this.id=id;
+        }
+
+
+
+     getter:-
+     ------------
+         --->  It will return the value,
+
+         public getId()
+         {
+             return this.id;
+         }
+
+
+
+=============================================================================================
+Inheritance:-
+--------------
+   Inheritance is also know as IS-A relationship.
+
+   what is IS-A relationship..?
+   -----------------------------------
+
+
+   Employee is a Person
+   Student is a Person
+
+   Car is a Vehicle
+   Lorry is a Vehicle
+   Bus is a Vehicle
+
+   SavingAccount is a Account.
+   CurrentAccount is a Account.
+
+
+  child  <----  parent
+  sub  <----  super
+  derived  <---- base
+
+
+ --> Inheritance is nothing but acquiring the property from the parent class.
+ --> extends keywords makes parent and child relationship.
+
+
+types:-
+-----------
+ 1.  single
+ 2.  multilevel
+ 3.  hierarchial
+
+ 4.  multiple  (It is not supported in java through class level.)
+ 5.  hybride   (It is also supported.)
+
+=====================================================================================
+
+
+Super keyword:-
+-----------------
+  ->super is a keyword in java, which is used to refer the immediate parent class property.
+  ->It is applicable in 3 places.
+      1. variable.
+      2. method.
+      3. constructor.
+
+==============================================================================================
+Polymorphism:-
+-----------------
+   poly --> many.
+   morphism --> forms.
+
+     many forms ,
+
+     one object many forms
+
+     person is a object,
+                 home ---> he is a father/ son.
+                 company ---> he is a employee.
+                 bank  ---> Customer.
+                 train --> passenger.
+
+
+
+  polymorphism:-
+  --------------
+     2 types.
+       1. compile time polymorphsim.  ---> overloading.
+       2. runtime polymoprhism.       ---> overriding.
+
+overloading:-
+--------------
+   A class can have same method , with different parameters.
+
+Overriding:-
+-------------
+  It comes under inheritance.
+
+  different classes can have same method name with same parameter.(parent and child class).
+
+  father property son will acquire.
+   
+    father                          son
+    -----------                ---------
+    mothertongue  -->tamil        yes son can acquire              
+    color         --> white       yes son can acquire
+    education     --> mbbs        if he does not like, son can overriding.
+
+    when sub class, does not satisfy with the parent class implementation,
+    then sub class can chnage its implementation.
+      
+      overriding rules:-
+      -----------------
+       -> same method name and return type.
+       -> visiblity should not be reduced, it can be increased.
+       
+       -> private method cannot override.
+       -> static method cannot be override.
+       -> final cannot be override.
+
+=====================================================================================================       
+
+  task:-
+  ----------
+       
+       create a class called Car, 
+         with the fields,   modelNo,brand,speed,..
+         
+         By using parameter constructor, initilize modelNo and brand. and speed to zero.
+    
+    ---> declare the methods,
+             brake()   ------> decrement the speed value to 5
+             accelerate()   ---> increment the speed value to 5
+
+             use proper setter and getter
+
+       inisde main method call,
+             call 5 times accelerate the  3 times brake, 4 times accelerate --> show the speed of the car.
+             getSpeed() --> returns the speed of the car.
+
+=================================================================================================             
+
+ upcasting:-
+ -------------
+     reference of parent,  object of child.
+       (creating the child object, and storing in the parent reference).            
+ 
+
+    	Kotak kotak = new Kotak();    // It will call the method from parent class and child class
+      Bank bank = new Kotak();     // parent method + child class overridden methods
+
+
+===========================================================================
+
+day 4:-
+-----------
+this, super,
+
+final :-
+---------
+  It is a fixed constant once we define, we cannot modify it.
+    It is used in 3 places,
+        variable:-
+        methods:-
+        class
+
+ final variable:-
+ -----------------
+     ->It is fixed constant, once initilised, it cannot be modified.
+     -> final variable should be initilised, we cannot simply declare.
+
+
+final method:-
+-------------
+    Once the method declared as final, It cannot overridden in the subclass.
+
+final class:-
+---------------
+   final class cannot be extended.
+===========================================================================================================
+
+abstraction:-
+----------------
+  showing the necessary details, hiding the unwanted details,
+
+  eg:-
+  -------
+      car we driving, but dont know the interal details,
+      remote 
+
+
+In java:-
+-------------
+
+2 types of methods:-
+----------------------
+1. normal method.
+2. abstract method.
+
+1. normal method:-
+-------------------
+       It will have body and implementation details.
+
+   void display()
+   {            ---------------> body
+      sop("hello all"); -------> implementation
+   }
+
+      (no hiding)
+
+2. abstract method:-
+---------------------
+   It does not have body and no implementation details.
+   abstract keyword is used here.
+  
+   abstract void display();
+    
+     (hiding)
+
+   3 types of classes:-
+   ----------------------
+
+    normal class                 abstract class                          interface
+     or
+   concerete class  
+  -----------------------    --------------------------------     ---------------------------------
+                                                                            (jdk 1.7)
+class Employee                abstract class Employee                     interface Employee
+{                            {                                         {
+    normal method                  normal method                            abstract method
+                                        +   
+                                   abstract method        
+}                             }                                        }
+
+[0% hiding]                  [0 to 100% hiding]                           [ 100% hiding]
+no hiding                      partially hiding                           fully hiding
+
+                            we cannot create the object                 we cannot create the object
+==========================================================================================================
+when to make the method as abstract..?
+----------------------------------------
+
+we have the method requirement but don't know the implementation, implementation will be given by child class.
+
+Note:-
+----------
+  for abstract method , the implementation will be given by child class.
+
+===============================================================================================================
+
+important points about abstract class:-
+------------------------------------------
+ 1. we can have a constructor for the abstract class.
+ 2. we cannot create the object for the abstract class.
+ 3. abstract class cannot be final.
+ 4. we have have implementation for abstract class.
+      it has both
+          abstract method  : no implementation
+          normal method    : It has implementation
+
+============================================================================================================
+
+interface:-
+----------------
+  --> It will have only abstract method  (JDK 1.7)
+  
+  --> using interface we can achieve multiple inheritance,
+  --> Here we use implements keyword.
+
+    class --- class ==> extends
+    interface --- interface ==> extends
+    interface --- class    ==> implements
+
+  properties of inteface:-
+  --------------------------
+  1. by default in interface ,all the variable are public static final.
+  2. by default in interface ,all the methods are public abstract.
+
+  =======================================================================================================
+
+
+
+class C extends A, B  // It is not possible in class level
+{
+
+}
+
+==================================================================================================
+arrays:-
+-----------
+  -> collections of values of same type.
+  -> In array the elements are store in index.
+  -> the index start from zero.
+  
+  -> to find the length , we have length, -> which returns the length of the array.
+
+adv:-
+-------
+   ->in a single variable , we can store collection of values.
+   ->random access ( we can access any element of the array).
+
+dis:-
+-----
+  -> size is fixed. 
+  -> same type of data.
+
+  types:-
+  ---------
+  1. one dimensional 
+  2. two dimensional  (rows and columns)
+
+
+  how to create an array:-
+  ----------------------------
+    3 ways:-
+    -----------
+1st:-
+-------
+    int arr[] ;  // array declaration
+    arr = new int[5]; // array instancation
+    
+    arr[0]=3; // initilization
+    arr[2]=45; //
+
+
+2nd type:-
+-----------
+    int arr[] = new int[5]; // declaration + instancation
+    arr[0]=1;  // initilization
+    arr[2]=23;
+
+3rd way:-
+------------
+   int arr[] = {1,3,4,2,7}; // declaration + instancation+ initilization.
+         
+
+=========================================================================
+
+int marks[] = {45,67,78,90,50}
+    ---> total marks
+    --> min  marks
+    --> max marks
+    -->result --> if all the marks are > 50 pass else fail
+    --> count of pass and fail
+
+
+=============================================================================
+
+String in java:-
+-----------------
+  
+  
+ The String class represents character strings. Allstring literals in Java programs, such as "abc", 
+ areimplemented as instances of this class. 
+
+Strings are constant; their values cannot be changed after theyare created. 
+String buffers support mutable strings.Because String objects are immutable they can be shared. For example: 
+ String str = "abc";
+ 
+
+ 2 ways to create a string in java:-
+ --------------------------------------
+
+ 1.by literal.
+ 2.by new keyword.
+
+    literal :-
+    -------------
+     String s1 ="hello";
+     
+
+     new keyword:-
+     ---------------
+     String s2 = new String("hello");
+
+
+ string coparison:-
+ ------------------
+   ==     ----------------> It checks the memory address.
+   equals  ---------------> It will check the content.
+  
+   equalsIgnorecase
+   compareTo
+
+
+========================================================================
+
+String          vs               StringBuffere
+------------             ----------------------
+immutabe                     mutable
+
+
+StringBuffer:-
+---------------
+   It is mutable, (we can change it)
+
+StringBuffer sb = new StringBuffer("hello");
+
+
+
+===================================================================================
+Wrapper:-
+-----------------
+
+primitive:-
+---------------
+    numeric:-
+    --------------
+     integer               floating point
+     -----------           ---------------
+     byte 
+     short
+     int
+     long
+
+
+
+     primitive                   Object
+     ---------------      ----------------
+     byte                    Byte
+     short                   Short
+     int                     Integers
+     long                    Long
+
+========================================================================
+
+wrapper class methods:-
+------------------------
+ min_value
+ max_value
+ 
+pasreInt(),parseFloat(),...
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+

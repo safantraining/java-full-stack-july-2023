@@ -1,0 +1,2302 @@
+day2:-
+-------------
+difference between print and println.
+
+keyowrds:-
+--------------
+  for,while,int,switch,...
+   reserverd world,else, if,...
+
+Identifier:-
+---------------
+   class name,method name, variable name are the identifiler.
+   class Test    ------> Test is the identifier
+   {
+      int a;     ------> a is the identifier
+      
+      void test()   ----> test is the identifier
+      {
+      
+      }
+      
+      void for()  // wrong
+      {
+      
+      }
+      int for=1;  //wrong
+   }
+   
+   
+     keywords should not be the identifier
+--------------------------------------------------------------------------------------
+Java Data types:-
+----------------------
+
+primitive     and    non-primitive:-
+----------------------------------------------
+
+
+primitive data type:-
+------------------------
+    1)Integer
+    ---------------            range
+         byte   ---> 1 byte    -128 to 127
+         short  ---> 2 byte
+         int    ---> 4 byte
+         long   ---> 8 byte
+         
+            1 byte= 8 bits
+              
+              bits-1
+            2        -1
+              8-1
+            2     -1
+              2*2*2*2*2*2*2
+                = 128 - 1
+                
+              -128 to 127
+         
+    2)Floating point
+    -------------------
+       float     ---> 4 byte            
+       double    ---> 8 byte 
+      
+    3)character
+    --------------
+       char
+    4)boolean
+    --------------
+        boolean    
+
+
+Non-primitive:-
+------------------
+classes, arrays and interface.
+
+
+
+Note:-
+--------
+   in char we can store only single character,
+   to store more than one character java provides 3 inbuilt class.
+      String
+      StringBuffer
+      StringBuilder
+
+
+
+ascii:-
+-------------  
+65 - A
+66 -B
+.........
+
+
+97 -a 
+98-b
+99-c
+================================================================================
+type casting:-
+-------------------
+   converting from one type to another type.
+   
+     size increasing order
+     
+      1       2      4      8      4        8
+     byte-->short-->int-->long-->float-->double-->
+     
+     
+     2 types of casting:-
+     --------------------
+        1) implicit casting.
+        2) explicit casting.
+   
+    implicit:-
+    -----------
+         It will be automatically done by the compiler.
+         
+         storing smaller type value in the larger datatype.
+         eg:-
+         ----
+             storing int in double
+                      4       8
+    explicit:-
+    -----------
+         manually developer has to do.
+         (compiler is not responsible)     
+   
+----------------------------------------------------------------------------------
+day3:-
+---------
+   operators:-
+   -------------
+     Arithemtic     + , - ,/ % , 
+     Relational/comparison    >,<,>=,<=, ==, !=
+     increment/decrement ++ ,--
+     logical   &&
+     bitwsise  &
+     assignment operator.
+     ternary operator.
+    
+     12--> 1100
+     4-->  0100
+          ----------
+            0100
+            ---------
+-----------------------------------------------------------
+-------------------------------------------------------------
+swap two variable without 3rd variable:-
+------------------------------------------------------------
+
+conditio stmt:-
+-------------------
+if
+if else
+if else if
+
+looping stmt:-
+------------------
+
+----> sum of a digit:-
+=================================================
+day4:-
+--------
+  Array:-
+  --------
+  ->Array is nothing but, collection of similar values(same type) 
+              (or)
+  
+  -> Collection of homogeneous element.
+  -> in array we use index operator [], to access element from particular index.
+  
+  adv:-
+  ------
+     --> in a single variable we store more values.
+     --> random access
+  
+  disadv:-
+  --------
+     --> size is fixed
+     --> homogeneous type.
+     
+how to create an array:-
+--------------------------
+   3 ways:-
+   -------
+   
+   1st way:-
+   --------
+      int a[];   // array declaration
+     
+      a = new int[5]; // array instancation
+     
+      a[0]=1;        // array initilization
+      a[1]=4;     
+  
+  2nd way:-
+  ----------
+      int a[]= new int[5]; // declaration + instancation
+      a[0]=3;
+      a[3]=5;
+      
+  3rd way:-
+  ---------
+      int a[] = {1,2,3,4};  // declaration + initilization
+           
+
+types of array:-
+--------------
+ 1)single
+ 2)multidimensional
+ 3)Jagged Array   ---> columns are not even.
+
+===================================================================
+oops:-
+----------
+ Object Oriented Programming System.
+ 
+ why we use oops..?
+ ---------------------
+ ->It is a programming paradigm or design pattern to design the
+ software based on real world object.
+ 
+ -> real world objects:-
+    --------------------
+       car
+       building 
+       person
+       
+       (object means , It can be any thing, name,place, thing).
+    
+    inside oops we have,
+       1)class
+       2) objects
+           4 features:-
+           -------------
+           1)abstraction
+           2)Encapsulation
+           3)Inheritance
+           4)polymorphism
+                 
+  Class:-
+  ---------
+   1)It is a blue print of object
+        (or)
+    It is a template, to create the object.     
+       eg:-
+       ----
+            blue               object
+         car design            Audi
+         building plan         Building
+  
+  
+  2)It will have state and behaviour
+               ( variable)  (functions/methods) 
+               
+        Car 
+          --> color,price,brandName   --> variable.
+          --> checkMilage(), carMovement() --> behaviour        
+   
+  3)It is a collection of object.                
+  4)It will have constructor.
+  
+  syntax:-
+  ---------
+  class classname
+  {
+  
+  }
+  
+  
+Object:-
+----------
+   1)It is the instance of a class.
+   2)Object describe the state and behaviour   
+  
+  Syntax to create the object:-
+  ------------------------------
+  clasname objectname = new classname();
+  
+  
+Constructor:-
+----------------
+  why we use:-
+  --------------
+    -> It is used to initilize the object.
+             (or)
+        to initilize the variable values.
+  
+  Rules for Constructor:-  
+  ------------------------
+      -->It is same as class name.
+      -->It is like a method, but it does not have return type
+      -->It will be called automatically when you create the objects.
+         
+  Note:-
+  --------
+     compiler will add, default constructor to java class.
+     
+  types:-
+  --------
+     default.
+     parameterized.              
+ ==========================================================
+ day 5:-
+ ---------
+ 
+ Access modifier:-
+ -----------------
+              with in the    with in the        outside the package      any package
+              class          package            by subclass
+                            (same package)      (different package)      
+ private      yes             no                   no                       no
+ 
+ 
+ default      yes            yes                   no                       no
+ 
+ 
+ protected    yes             yes                 yes                        no
+ 
+ 
+ public        yes            yes                  yes                      yes
+ 
+ 
+ ================================================================================================
+
+ what is Object class:-
+ ----------------------
+
+--> It is the super class of all the java class.
+         (or)
+     Parent root class for all the java class.
+
+       methods:-
+       ---------
+           toString()
+           equals()
+           hasCode()
+           wait()...etc...      
+
+    to achieve object behaviour.
+
+
+
+----------------------------------------------------------------------------------------
+int a = 10;  // a is int type
+Customer customer = new Customer(1, "john");   // customer is cutsomer type/object type
+
+
+class person
+{
+
+}
+class Employee extends Person
+{
+
+}
+
+Employee employee = new Employee();  // employee is employee type/person type/object type
+
+---------------------------------------------------------------------------
+variable:-
+------------
+  local     ------------>with the block (method/ construction)
+  global or instance  --> inside the class  (It can be called in any method)
+  static 
+
+
+---------------------------------------------------------------------------
+
+java compilation:-
+--------------------------
+        soure code  --> compile  ---> byte code------------- ---> jvm--------------------> machine code
+                                             class loading                  (allocation of memory)
+                                           (.class file will load to jvm)   local variable
+                                           static memory allocation          instance variable
+
+
+
+day6:-
+---------
+
+static:-
+----------
+  -> It is used for memory management.
+  -> the memeory allocation for static will happen during the class loading time.
+  
+  -> At run time, JVM calls the main method, before main method execute, it will allocate the memory for static.
+
+   eg:-
+   ----
+    static
+	{
+	   System.out.println("static block 1");	
+	}
+	
+    public static void main(String[] args) {
+
+		System.out.println("main method");
+	}
+	
+	static
+	{
+		System.out.println("static block 2");
+	}
+
+
+   static method / static variable:-
+   --------------------------------------------------
+      to access the static member, using the class name.
+
+-------------------------------------------------------------------
+ one class               ----> static
+     n number of object 
+ 
+
+ when to declare as static,when we want to share common property to all the objects.
+
+ Note:-
+ -------
+   constructor cannot be static
+
+ ===============================================================================================
+
+Encapsulation:-
+----------------
+   Encapsulation <==>  data hiding + security
+
+   no providing direct access to the variable, acceesing using public setter and getter method.
+
+   ----------------------------------------------------------------------------------
+
+   data hiding:-
+   -------------
+     declare all the fields as private and access it, using public setter and getter method.
+
+ ========================================================================================================    
+Inheritance:-
+------------------
+   IS-a relationship
+
+   cow is a Animal
+   dog is a Animal
+
+   Student is a Person.
+   Employee is a Person.
+
+   child         Parent
+   sub           super
+   derived       base
+   
+In Inheritance, child class inherit, the property from the parent class.
+eg:-
+------
+    mother tongue.
+    color.
+
+types:-
+--------
+    1. single              
+    2. multilevel
+    3. hierarchial
+    4. multiple    (not supported) 
+    5. hybride     (not supported)  
+
+
+
+single:-
+---------
+   A 
+   |
+   B
+
+Multilevel:-
+---------
+   A 
+   |
+   B
+   |
+   C
+   | 
+   D
+
+ hierarchial:-
+ ----------------
+       A
+     |   |
+     B    C
+
+     B extends A
+     C extends A
+
+ Multiple:-
+ --------------
+       A  B 
+       |  |
+         C    
+ 
+    It creates a ambguity, C will get confuse which one to inherit,when same method different implementation
+
+    Since multiple is not supported, hybride also not support.
+
+Note:-
+------- 
+    1. multiple inheritance is not supported in java , through class level. using interface we can achieve multiple inheritance
+    2. In inheritance , we create child class object, 
+        child class can call implicitly call parent class default constructor.
+         child class cannot call implicitly parent class parameterized constructor.(to achieve this we need to use super)
+
+    3. child can able to inherit the property,except private members.
+================================================================================================================
+day7:-
+---------
+
+
+Super keyword:-
+-------------------
+   ->Super is a keyword in java, (which is used in Is-a relationship / inheritance).
+
+   ->It is used to call the immediate parent class property.
+       It is applicable in 3 places.
+         1) variable 
+         2) methods
+         3) class constructor.
+
+
+  ===========================================================================================================    
+Is-A                                        Has-A
+--------------------                     ------------------------------------
+
+Car is a Vehicle                            Car    has    a      Engine
+Lorry is a Vehicle                          (object 1)         (object2)
+Bus is a Vehicle
+
+                                          Employee has   a     Address
+dog is a Animal
+Cow is a Animal
+
+
+Employee is a Person
+Student is a Person
+
+Has-A relationship:-
+---------------------------
+      Has-A is nothing but, object reference.
+                   (or)
+     Has-a is nothing but , entity reference.
+
+Note:-
+------------
+   IS-a   ==> we use extends keyword
+   Has-a   ==> we use object reference.
+
+
+===========================================================================================================
+Polymorphism:-
+-------------------
+   Poly --> many
+  morphism --> forms
+
+   one name ==> many forms.
+
+   eg:-
+   -----
+       person    
+             ---> if he drives a car  [driver]
+             ---> if he works         [employee]
+             ---> if he is in home    [father / son / brother].
+
+
+       same object behaving differently, based on different condtion.
+
+       2 types:-
+       ----------------
+       1) compile time polymorphism    ---> overloading  --> binding will happen at compile time
+       2) run time polymorphism        ---> overriding
+
+
+ =========================================================================================================     
+overloading:-
+----------------------
+      A class can have same method name with different argument.
+
+      eg:-
+      ------
+        void filter()
+	{
+		System.out.println("--default filter--");
+	}
+	
+	void filter(int model)
+	{
+		System.out.println("-- filter by model --"+ model);
+
+	}
+	
+	void filter(double price)
+	{
+		System.out.println("-- filter by price --"+ price);
+
+	}
+	void filter(String brand)
+	{
+		System.out.println("-- filter by brand --"+ brand);
+	
+	}
+	
+  =======================================================================================================
+day8:-
+-------
+   cont ..polymorphism
+
+   overloading.
+   overriding.
+
+   overriding:-
+   -----------------
+        concept:-
+        ---------
+            It comes under inheritance  (relationship) --> parent and child class.
+
+            In inheritance --> child acquire the property of parent.
+            
+            suppose, --> 
+                   if child class, does not satisfy with the parent class implementation, then child 
+                   class can give his own implementation.
+
+                   (or)
+                   redefining the new implementation in the sub class.
+
+
+           In other terms, different classes can have same method name with same parameter.
+
+     eg:-
+     -------
+           package com.excelr.day8.polymorphism;
+
+class Parent
+{
+	void breakfast()
+	{
+		System.out.println("idly");
+	}
+}
+class Child extends Parent
+{
+	//redefining the same method, with new implementation in sub class
+	void breakfast()
+	{
+		super.breakfast();
+		System.out.println("dosa");
+	}
+	
+	
+}
+
+public class OverridingDemo1 {
+
+	public static void main(String[] args) {
+
+		Child child = new Child();
+		child.breakfast();
+		
+		}
+
+}
+      
+upcasting:-
+------------- 
+   reference of parent object of child.  
+
+   eg:-
+   ----
+   package com.excelr.day8.polymorphism;
+
+class RBI
+{
+	int bonus=100;
+	void rateOfInterest()
+	{
+		System.out.println("RBI 4% ROI");
+	}
+	void holiday()
+	{
+		System.out.println("all week ends holiday");
+	}
+}
+
+class Axis extends RBI
+{
+	int bonus = 6000;
+	
+	void rateOfInterest()
+	{
+		System.out.println("AXIS 7% ROI");
+	}
+	
+	void workingHours()
+	{
+		System.out.println("9am to 7 pm");
+	}
+}
+
+
+public class OverridingDemo2 {
+
+	public static void main(String[] args) {
+
+	    System.out.println("====parent object ==="); 
+	     RBI rbi = new RBI();
+	     rbi.rateOfInterest();
+	     rbi.holiday();
+	     
+	     System.out.println("=====child object======");
+	     Axis axis = new Axis();
+	     axis.rateOfInterest();
+	     axis.holiday();
+	     axis.workingHours();
+	     System.out.println(axis.bonus);
+	     
+	     System.out.println("=====upcasting parent reference child object======");
+	     RBI obj = new Axis();
+	     obj.rateOfInterest();
+	     obj.holiday();
+	   //  obj.workingHours();
+	     System.out.println(obj.bonus);
+		
+		
+	}
+
+}
+==============================================================================================
+abstraction:-
+---------------
+      showing only necessary features, hiding the unwanted deatils.
+
+      eg:-
+      ----
+        car --> engine is hiding ---> press accelator.
+        keyword --> if we press key --> it display in the editor.
+
+
+===============================================================================================
+
+in java:-
+-----------
+  methods:-
+  -------------
+     2 types:-
+     -----------
+        1) normal method.
+        2) abstract method.
+
+
+  normal method:-
+  -----------------
+
+       It will have body and implementation details.
+    void greet()
+    {                      ----------> body
+      sop("welocme all");   ----------> implementation
+    }
+     
+     here no hiding, 
+     It is compelete method
+
+
+  abstract method:-
+  ------------------------
+      It starts with abstract keyword.
+      It will not have body and no implementation details.
+
+    abstract void greet();   --> no body and no implementation
+    
+
+      It is hiding.
+      It is incomplete.
+
+==================================================================================================      
+classes:-
+--------------
+    3 types
+    ------------
+      1) normal or concerete class.     [normal methods]                    ---> no hiding ,  0% hiding
+      2) abstract class.                [both normal and abstract method]   ---> partially hiding , [0-100%] hiding
+      3) interface.                     [only abstract method]               --->fully hiding.
+
+==================================================================================================================
+
+Note:-
+-------
+    when to make the method as abstract...?
+    ---------------------------------------------
+  when i have a method requirement , but don't the implementation.
+
+====================================================================================================================
+
+abstract class:-
+-----------------------
+  eg:-
+  -----
+  package com.excelr.day8.polymorphism;
+
+abstract class Oven
+{
+	abstract void heating();  
+	void brandName()
+	{
+		System.out.println("xyz brand");
+	}
+
+}
+
+class Tea extends Oven
+{
+
+	@Override
+	void heating() {
+        System.out.println("10 mts tea heating");		
+	}
+}
+
+class Rice extends Oven
+{
+
+	
+	void heating() 
+	{
+		System.out.println("20 mts for rice heating");
+	}
+	
+}
+
+
+public class AbstractionDemo {
+
+	public static void main(String[] args) {
+
+		Oven oven = new Rice();
+		oven.heating();
+		oven.brandName();
+		
+	}
+
+}
+
+=====================================================================================
+
+interface:-
+-----------------
+     ->It contains only abstract method.  
+     
+     properties of interface:-
+     ------------------------
+     in interface, 
+        by default ,
+              variable ==> public static and final [It should be initilised during declartion]
+              method   ==> public and abstract.
+
+      
+      =======================================================================================
+
+      class    == class   ==> extends
+      interface == interface  ==> extends
+      interface  == class  ==> implements
+      class   == interface  ==> (not possible).
+
+      ======================================================================================
+
+      by using interface ,we can achieve multiple inheritance:-
+      ------------------------------------------------------------------------------------
+ Loosely coupled:-
+ ----------------------
+      easily we can change the implementation.
+
+  =================================================================================    
+day 9:-
+------------
+Exception Handling:-
+---------------------
+  Exception is event which will distrub the normal flow of the application.
+
+   normal flow --> the program execute normally , (all the lines has executed)
+
+error  vs    exception:-
+---------------------------
+error:-  syntax error
+          missing of semicolon(;) ,{},"",
+          we cannot handle error
+     
+exception :- logical error
+              String name=null;
+                    name.length;  // for null we can get the length (It will throw exception)
+               String name2 ="sachin";
+                    name2.length;  // 6
+           
+             4/2 =>2
+             6/2 => 3
+             6/0 => infinite.
+           
+           we can handle the exception.
+-----------------------------------------------------------------------------------------
+to handle exceptions , java provides built in classes and keyword.
+
+/ by zero ---> ArithemticException
+
+null.length  ---> NullPointerException
+
+array length = 5
+arr[8] //      ---> arrayIndexoutOfBound.
+
+===========================================================================================
+
+keywords:-
+-----------
+try 
+catch
+finally
+throw
+throws
+
+=========================================================================================
+handling the exception using try and catch block:-
+-----------------------------------------------------
+
+try
+{
+    // critical code (the code which might get an exception)
+    // risky code (developer can keep)
+}
+catch(ExceptionClassName exceptionObjectName)
+{
+
+}
+
+
+===========================================================================================
+Exception is the root class for all the exception...
+==============================================================================
+try -- catch
+try --catch1 --catch2--catchN .....   (root class should be at last)
+try --finally
+=======================================================================================
+try
+		{
+			
+		}
+		
+		
+		catch (ArithmeticException e) {
+		}
+		
+		catch (ArrayIndexOutOfBoundsException e) {
+		}
+		
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+
+=========================================================================================
+catch and finally block
+---------------------------------
+catch block:-
+-----------------
+  It is called only , when there is a exception.
+
+finally block:-
+-----------------
+  the code in the finally block will execute guranteed.
+   closing stmt we write inside the try block.
+
+============================================================================================================ 
+Exception class hierarchy:-
+-------------------------------
+
+
+          compile Time Exception:-
+          ---------------------------  
+             It will not compile ,It will give exception during compile time only.
+
+               Exception
+                 |
+                IOException ,ClassNotFoundException,...
+               
+
+          RunTime exception:-
+          --------------------
+             program compiles successfull, at run time it will give exception.   
+
+               Exception
+                 |
+                RunTimeException
+                    |
+                  ArithemticException,ArrayIndexOutOfBoundException,.....                  
+
+   
+Note:-
+-------
+   compile time excption --> parent =>Exception
+   run time exception    --> parent =>RunTimeException
+
+==============================================================================================================
+throw:-
+   It is used to  throw the exception.
+
+throws:-
+   It is used to declare the exception. 
+
+==============================================================================================================
+
+oops task:-
+-------------------
+   create a class called car, with the fields
+       modelno ,
+       brand,
+       speed,
+       
+
+       initilize the value using constructor, modelno,brand
+           speed = 0, 
+
+      // setter and getter
+        methods:-
+        --------
+          accelerate()
+              ----> increase speed by 5
+
+          brake(); 
+              ---> speed should decrease by 5  
+           
+         getSpeed()
+             returns the current speed.
+
+
+         6 times ------> accelerate()   30
+         2 times ------> brake()         -10
+                      getspeed()       20     
+                    
+==================================================================================================================                    
+
+day10:-
+---------
+  custome exception:-
+  ----------------------
+     we are creating a custome exception, it is checked or unchecked...?
+
+      Rules:-
+      ------- 
+         create a class, which extends
+                          1) Exception         ----------> checked exception
+                          2)RunTimeException   ----------> unchecked exception
+
+eg:-
+------
+    class InValidAgeException extends Exception  --------> checked exception
+    {
+
+    }
+
+    class InValidAgeException extends RunTimeException    ----> unchecked exception
+    {
+      
+    }
+
+====================================================================================================
+task:-
+-----
+   create a employee class, with fields firstname and lastname,
+    initilize the value using constructor.
+     
+     create a validate method, which throws,
+           -->InValidNameLengthException  ---> if firstname and lastname length is lessthan 4
+           --> nullpointerexception       ---> if firstname and lastname is null, it will throw nullpointer exception.
+===============================================================================================================
+String handling:-
+---------------------
+   ->It is nothing but collection characters.
+   ->It is immutable, (It cannot be modified).
+
+   2 ways to create a String java:-
+   ---------------------------------
+   1) literal.
+   2) new keyword.
+
+   eg:-  Object is the instance of a Class
+      Car audi = new Car();
+      Car benz = new Car();
+
+    audi is the instance of Car
+    benz is the instance of Car
+
+    String name="john";   --> john is object
+    String dept="hr";
+
+    john is the instance of String
+    hr is the instance of String
+
+
+    =========================================================
+
+    ==     -----> It will check the address
+    equals   ----> It will check the content
+
+====================================================================================================================
+day11:-
+--------------
+File Handling:-
+--------------------
+   import java.io:-
+   -----------------
+         (under this package , it provides predefined classes, interface and methods, to do the operation with the file)
+
+
+stream:-
+----------
+    flow of data.
+
+    2 types of stream:-
+    --------------------
+    1) byte stream     -----> ascii code.  english  -> a->97,b->98,c->99,...
+    2) character stream   ---> unicode.    more language, -->
+
+   =======================================================================================================
+
+ java has 3 inbuit stream:-
+ ----------------------------
+     System.out
+     System.in
+     System.err
+
+some of the classes of character stream:-
+-----------------------------------------  
+File
+FileWriter
+FileReader
+BufferedWriter
+BufferedReader
+PrintWriter
+
+
+==================================================================
+
+File:-
+--------
+   we can create file or folder.
+   we can check weather file or folder exists.
+
+  eg:-
+  -----
+    
+		File file = new File("abc.txt");
+		
+		if(file.exists())
+			System.out.println("file is present");
+		else
+			System.out.println("file is not present");
+		
+   
+eg:-
+------
+  File file = new File("movies");
+		file.mkdir();
+		
+		File f2 = new File("E:\\full stack 8.30 to 10.30\\eclipse workspace\\file handling\\movies\\hello.txt");
+		f2.createNewFile();
+		
+
+ FileWriter:-
+ ----------------
+
+  By using FileWriter class, we can write the character data, to the file.
+    -->It will write one by one charcater,
+    -->It internally extends File, if file is not present, it can automatically create the file.
+
+  eg:-
+  -----
+
+    public static void main(String[] args) throws IOException {
+
+		FileWriter fw = new FileWriter("demo.txt");
+		fw.write("hello \n");
+		fw.write("welcome\n");
+		fw.write(98);
+		//fw.write(77);
+	
+		fw.flush();
+		fw.close();
+		
+		
+	}
+
+FileReader:-
+----------------
+  By using file reader, we can read character data from the file,
+  At a time , we can read only one charcater.
+
+  FileReader fr = new FileReader("abc.txt");
+		int read=fr.read();
+		
+		while(read!=-1)
+		{
+			System.out.print((char) read);
+			read=fr.read();
+		}
+
+
+BufferedReaderDemo:-
+----------------------
+   It does not communicate directly with the file, It needs some writer object.
+   It will line by line data from the file
+   
+=======================================================================================
+Day 12:-
+---------
+
+Wrapper Classes:-
+--------------------
+  int a = 10;  // primitive
+
+  Integer a =10; // object
+
+   for every primitive data type we have a respective wrapper class.
+
+
+Collection Framework:-
+------------------------
+   framework:-
+   ----------
+      library classes (It provides built in classes, interface and method).
+         (or)
+      readymade classes, methods and interface are available to the developer.
+     
+
+what is collection..?
+-------------------------
+   collection is nothing but, group of heteregeneous objects stored in a  single entity.
+   where we can add,update , remove and modify the element in an effective manner.
+
+
+   why we use collection when we have array..?
+   -----------------------------------------------
+   Array                      vs                Collection:-
+   ----------------                  ----------------------------
+1)homogeneous                               heteregeneous
+  (same type of data)                       (different type of data).
+
+2)size is fixed                             size is dynamic.
+
+3)no inbuilt data structure                 It has inbuit data structure.
+                                              (ArrayList,LinkedList,Vector,Stack,TreeSet,TreeMap,HashMap,LinkedHashMap,etc)
+
+
+
+===========================================================================================================================
+
+Classes class hierarchy:-
+-----------------------------
+     Collection:-
+     ------------
+         List: 
+         Set:
+         Queue:
+
+    List:-
+    ---------
+          It allow duplication.
+          maintains insertion order.
+
+      Set:-
+      ------
+         It does not allow duplicate
+         order is not preserved (sub class define the order).
+    
+     Map:-
+     -----     
+         It will store the element as key value pair. 
+         key will be unique, but values can be duplicate.
+      
+      Queue:-
+      ------
+         FIFO
+            First in First Out.
+
+============================================================================================    
+
+util package:-
+-------------------
+    it has collection classes and interfaces.
+
+
+
+ArrayList:-
+-------------------
+  It implements List interface (allow duplicate, maintains insertion order)
+  It uses dynamic array to store the element. (size will grow at run time)
+
+     the default capacity of arraylist = 10 elements.
+
+
+   New capacity = (old capacity * 3/2 )+ 1
+                 = 15 + 1
+                 = 16
+
+
+ ArrayList obj = new ArrayList();  // default capacity 10
+  ArrayList obj = new ArrayList(100);  // initial capacity 100
+
+  disadv:-
+  ---------
+      It is not good for insertion, when size is not there, it will create arraylist and copy..
+
+  adv:-
+  ------
+       reterival is good, directly we can any index element.
+
+
+
+Generic Collection:-
+-----------------------
+   type safety,
+      providing only specified type of objects.
+
+
+ eg:-
+ ------
+
+
+ ============================================================================================
+day 13:-
+--------
+  Cursor class:-
+  -------------
+        to iterate one by one element from the collection.
+    
+     Iterator   ------> interface 
+     ListIterator  ----->interface
+
+     Iterator:-
+     -------------
+           forward direction.
+              2 methods :-
+              -------------
+                 1)hasNext().
+                 2) next().
+
+      ListIterator:-
+      -------------
+              forward and backward direction.
+                4 methods:-
+                ------------
+                   1) hasNext()
+                   2) next()
+                   3)hasPrevious()
+                   4)previous().
+
+===========================================================================================
+
+List:-
+----------
+  ArrayList    --->It uses dyanmaic array for storage
+  LinkedList   --->It uses double linked list for storage
+  Vector       ---> It is same as arraylist, but vector synchronised, where as arraylist is not synchronised.[thread safe]
+  Stack        --->LIFO
+
+
+
+
+LinkedList:-
+----------------
+    double linked list,
+         It will add new node, where ever element is added,
+         All the nodes connected , one by one. 
+
+     adv:-
+     -----
+        insertion is good, (it will not copy)
+
+     disadv:-
+     --------
+         ->reterival is not good. It will traverse from first node.
+
+
+         addFirst
+         addLast    ---> It is similar to add
+         removeFirst
+         removeLast  ---> similar to remove
+         
+==================================================================================================
+Stack:-
+---------
+  LIFO
+
+ =====================================================================================
+ Set:-
+ -------
+       -> It will not allow duplicates.
+
+       3 implemenations:-
+       ---------------------
+              HashSet    ------> hash table          ------> own order
+              LinkedHashSet  ---> hashtable + linkedlist  (version of linkedlist without duplicate) --> insertion order.
+              TreeSet        ---> tree            ---> sorting order
+===========================================================================================================
+Map:-
+-------
+    -> It is a type of collection, but it does not extends collection.
+    ->In map, It store key value pair.
+    -> key will be unique but value can be duplicate.
+
+
+==========================================================================================================
+day 14:-
+-------------
+   map has 3 implemenation:-
+   ------------------------
+          HashMap       -------->   own order 
+          LinkedHashMap   ------>   insertion order
+          TreeMap         ------>   sorted order
+
+
+======================================================================================================
+
+Collection                              vs  Collections:-
+------------------------------              -------------------------------
+It is a interface                            It is a class.
+storing                                      It provides utility methods, to perform some operation on the collection
+                                             It has static methods
+
+
+=============================================================================================
+day15:
+comparator and comparable:-
+------------------------------
+   comparable              vs                  comparator:-
+   --------------------                 ---------------------
+ ->  It is a single sorting              multiple sorting sequence.
+ -> sort the orginal object              original object is not sorted.
+
+================================================================================================
+   
+day16:-
+--------
+   Java 8 features:-
+   -------------------
+
+   functional interface,
+   method reference,
+   lamda expression,
+   stream api,...
+
+=================================================================================================
+Override:-
+------------
+    parent and child will have same method,
+
+
+
+ interface:-
+----------------------
+  until jdk 1.7 interface contains , only abstract,
+
+  from jdk 1.8 onwards  interface contains , default methods, static methods and abstract methods.
+
+  until jdk 1.7:-
+  ----------------
+     java is giving important to objects.
+       int      a  = 10;  //   value 10 is stored in the variable a
+       Employee e = new Employee();  // Employee constructor is stored in e,(storing employee object in e)
+
+   from jdk 1.8 onwards:-
+   -----------------------
+      java is giving important to functions, called as functional programming.
+      
+      Addition e = (a,b)=> {
+          return a+b;
+      }
+
+       storing a function in a variable.
+
+   functional interface:-
+   ------------------------
+     what is functional interface..?
+     -----------------------------------
+      A interface is said to be functional interface, if it has SAM(Single Abstract Method).
+
+      By using functional interface we can achieve,
+                1) lamda expression.  ( giving the body to function interface)
+                2) method reference.  (giving the body to functional interface).
+
+
+Lamada expression:-
+--------------------
+ 1)  no method 
+ 2) no parameter type
+ 3) optional return type
+ 4) (=>) arrow symbol indicates the body.
+ 5) optional curly braces, for single line it is not required.
+
+ eg1:-
+ -------
+ @FunctionalInterface
+interface Test
+{
+	void display();
+}
+
+
+
+public class FunctionalInterfaceDemo {
+
+	public static void main(String[] args) {
+
+		Test t1 =  () -> System.out.println("this is display method");
+		t1.display();
+	}
+
+}
+
+ eg2:-
+ -----
+ interface Operation
+{
+	int largest(int a, int b, int c);
+}
+
+public class FunctionalInterfaceDemo2 {
+
+	public static void main(String[] args) {
+
+		
+		Operation op = (a,b,c) -> {
+			  if(a>b && a>c)
+				  return a;
+			  else if(b>a && b>c)
+				  return b;
+			  return c;
+		};
+	
+		System.out.println("largest "+op.largest(3, 7, 6));
+		
+		
+		Operation op2 = (a,b,c) -> a+b+c;
+		
+		System.out.println("addition :"+ op2.largest(2, 3, 4));
+		
+	}
+
+}
+--------------------------------------------------------------------------------
+Method reference:-
+--------------------
+   refering an existing method to the functional interface. (no need to write the body again).
+
+   (::)  --> method reference
+      
+      3 ways:-
+      --------
+         1) reference to non static method
+         2) reference to static method
+         3) reference to constructor
+
+
+Day17:-
+--------
+   functional interface will have , n number of default and static method
+
+==========================================================================================
+  inbuilt functional interfaces:-
+  ------------------------------------ 
+         available in the package --> java.util.function
+    Predicate  -
+    Function
+    Consumer... etc
+
+    Predicate:-
+    -----------
+        1) It is a boolean value function, which takes one arugument 
+        and always return boolean.
+     
+
+    Function:-
+    -----------
+        2) It takes one argument , and returns one arugument.
+            Type we have to define using Generic (typesafety)
+
+
+=================================================================================================
+stream API:-
+-------------
+   stream is a pipeline, to process the data.
+
+   difference between collection and stream:-
+   -------------------------------------------
+
+   Collection         vs                Stream:-
+   --------------             --------------------
+   Storing the                       It is used to process the data.
+   objects  
+
+
+ stream pipeline has certain built in methods, called as operation.
+  2 types of operation,
+     1) intermediate operation    ---> filter() , map, sorted(),...etc
+     2) terminal operation        ---> count(),foreach(),...
+   
+ 
+   intermediate:-
+   ----------------
+         after processing it again returns the stream.
+
+    Terminal operation:-
+    --------------------
+        after processing it does not return the stream.     
+   
+
+======================================================================================================
+sql 7days:-
+--------------
+=======================================================================================
+day 18:-
+------------
+  JDBC:-
+  -------
+   Java Database Connectivity.
+
+   By using JDBC, we can connect java application with the database.
+
+import java.sql:-
+-------------------
+under this package it provides, built in classes and interface and methods to interact with database.
+
+===================================================================================================
+
+stpes to connect with database:-
+-----------------------------------
+1. load the driver class.
+2. establish the connection (by giving url, username, password).
+3. create the statement or preparedstatement object ( we can send sql queries).
+4. close the connection
+
+
+execute     -----> boolean  ( insert,update, delete,.)
+executeUpdate  ---> int  (insert,update, delete)
+executeQuery   ---> ResultSet (select query)  --> table data will be reterived and stored in resultset object.
+
+=================================================================================================
+day 19:-
+---------
+    statement    vs      preparedstatement:-
+    ----------         --------------------
+    static queries       dynamic queries (parameterized queries)
+
+=========================================================================================
+day 20;
+-----------
+   jdbc 
+
+========================================================================================
+
+day 21:-
+------------
+     multi threading.
+
+     Thread:-
+     ---------
+       task.
+
+     multithtreading:-
+     ------------------
+           multitasking.
+
+     multitasking:-
+     ---------------
+          simultaneoulsy execution of more than one task.
+          parallel execution.
+
+          driving + call speaking.
+
+          browser --> multiple tabs, background download.   
+
+       2 types of multitasking:-
+       ------------------------  
+         1) process based.  ( comes under os topic) --> heavy weight
+         2) thread based.   (comes under java)     --> light weight
+
+process based:-
+-----------------
+   heavy weight
+
+       different applications runs simultaneously.
+      eg:-
+      ----
+         browser  (chrome)
+         listen to music  ( mx player)
+         attend the meeting  (zoom)
+
+         os will manage the memory.
+
+Thread based:-
+---------------
+     light weight.
+
+     Single program is sub divided into number of sub programs and they 
+     run simultaneously.
+
+     eg:-
+     ----
+         ms word  (one application)
+
+          typing               --> thread 1.
+          grammer spell check  --> thread 2.
+          word count           --> thread 3.
+          page count           --> thread 4.
+
+
+life Cycle of thread:-
+-------------------------
+   span of time, ( in that span of time it will change different state.)
+
+1) new born.
+2) Runnable.
+3) Running.
+4) blocked.
+5) dead.
+
+
+
+new born:-
+------------
+  when we create the object for the inbuit thread class.
+
+Runnable:-
+---------
+  we we call start() method on the thread object, It will come to 
+  runnbale state.
+
+  It is ready for execution, but waiting for the processor availiblity.
+
+
+Running:-
+------------
+   -> the processor has given time for the thread to run.
+   -> While running , the thread will go to following conditions,
+
+      sleep(int milliseconds)
+      suspend                 ----- resume
+      wait()                  ----- notify / notifyAll
+ 
+   
+Blocked State:-
+----------------
+   In this the thread idel,(It is not running).
+      (or)
+
+   It will prevent from entering into running and runnable state
+   respectively. unless we call resume and notify.
+
+   
+Dead:-
+------
+   Once the task is fininshed, the thread will go to dead state.
+   if we call stop() , then also it will go to dead state. 
+
+
+===================================================================================================
+
+to do multiasking in java, we need 2 inbuit method.
+------------------------------------------------------
+  1. run().   --> to keep our tasks.
+  2. start(). --> to call the run method.
+
+
+   where it is available...?
+
+   lang package:-
+   -------------
+      interface Runnable
+      {
+          run()
+      }
+   
+     class Thread implements Runnable
+     {
+          run()  --> it will override from runnable.
+         start()
+         sleep()
+         stop()
+         .....
+     }
+
+====================================================================================
+important points about run method:-
+-----------------------------------
+   --> for one class there should be only one run method.
+   --> It can call other methods.
+
+==============================================================================
+How to create thread in java:-
+--------------------------------------
+2 ways we can create thread in java.
+  
+   1) by extending thread class.
+   2) by impelementing Runnable interface.
+
+===================================================================================
+
+Mutitasking demo:-
+--------------------
+   task:-
+   --------
+anushree --> 1 to 10
+subhani -->  11 to 20
+naaz    --> 21 to 30
+
+   3 task, 
+     --> 3 run methods, --> 3 class
+
+============================================================================
+
+Naming a Thread:-
+-----------------
+   Thread.currentThread().getName();
+      It returns the thread name, which is currently executing.
+
+    for setting the name.
+
+    obj.setName("sachin");
+
+    if we dont set it will set default name.
+
+    Default name:-
+    ---------------
+    Thread0
+    Thread1
+
+ Thread Priority:-
+ ------------------
+    The thread which is having high priority, will try to complete the task first.(but not guranteed)   
+    The priority value, ranges from 1 to 10, 
+
+    1 --> minimum priority.
+    10 --> maximum priority.
+    5 --> default priority.
+
+======================================================================================================
+2 ways to create the thread:-
+-----------------------------
+   1) by extending Thread Class.  --> it will not work in sub class
+   2) by implementing Runnable interface.  --> It will work in the sub class also.
+
+=======================================================================================================
+Shared Resource:-
+-------------------
+    Balance is a shared resource
+        deposit (+)
+        withdraw (-)
+
+        the above 2 operation will update to same balance variable.
+
+
+   eg:-
+   ----
+     marriage:-
+
+         bride  (shared resource)
+           --> more guest will wish to the bride,     
+         At a time, only one guest can wish the bride.
+
+
+    water bottle:-
+    --------------
+         1 water bottle 5 person,
+              At a time only one person can drink.
+
+ ==================================================================             
+
+Synchronized:-
+-----------------
+  Synchronized method, It will allow only one thread to access the method.
+  It makes object lock, so that no other thread can access, until it releases the object lock.
+
+   2 types:-
+   -------------
+   1. synchronized method.
+   2. synchronized block.
+
+
+1. synchronized method:-
+------------------------
+   whole method will be synchronized.
+
+2. synchronized block:-
+-------------------------
+  inside the method, if we want to synchronized, few lines, then we can use synchronized block.
+
+=======================================================================================
+
+interthread communication:-
+-----------------------------
+It is all about, synchronised thread to communicate with each other.
+It is acheived by,
+   wait()
+   notify()
+      ()
+
+=======================================================================================================
+day 22:-
+---------
+   join()
+      It makes the thread to complete the task and terminate it, 
+
+   join will be helpful,we have task connectivity.
+      eg:-
+      ----
+         Booking thread should wait to complete the payment thread.
+         engagement thread completes , then only marriage thread start.
+
+
+Daemon thread:-
+-------------------
+   It is like a worker thread.
+   It provides help to the user thread.
+
+Java Date type API:-
+-----------------------------
+
+Day 23:-
+---------
+   Optional class:-
+   ---------------
+
+It was introduced jdk 1.8, to handle null pointer exception.
+using optional class, we can check weather it contains a value of not.
+
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+    
+      
+  
+  
+  
+  
+  
+  
+       
+       
+       
+       
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
