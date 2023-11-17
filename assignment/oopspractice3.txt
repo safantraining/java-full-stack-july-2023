@@ -1,0 +1,51 @@
+1 – Interface
+
+Create a package com.shape containing the following classes and interfaces.
+An interface Polygon containing the members as given below:
+void calcArea( );	Method to calculate area 
+void calcPeri( ); 	Method to calculate perimeter 
+Create a class Square that implements Polygon and has the following member:
+		side 	float
+Create another class Rectangle that implements Polygon and has the following member:
+		length		float
+		breadth	float
+In another package com.test, create a class that imports the above package and instantiates an object of the Square class and an object of the Rectangle class. 
+Call the methods on each of the classes to calculate the area and perimeter given the side and the length/breadth of the Square class and the Rectangle class respectively.
+
+
+==========================================================================================================================
+
+2- Inheritance and Abstraction
+**Create an abstract class Cricket with following private member variables**
+     maxOvers(int) targetScore(int) , currentOver(int), currentScore(int)  
+
+* Provide getter methods for all variables. 
+* Provide setter methods for currentOver and currentScore.
+* Set the maxOvers and targetScore in the Constructor
+* Create abstract methods calcCurrentRunrate and calcReqdRunrate which return a double 
+    
+Create SubClass of Cricket named OneDayCricket. maxOvers for one day cricket is fixed at 50.
+
+* Implement the abstract methods as follows:
+* Current Run rate is calculated using formula current Score / current over.  
+* Required Run rate is calculated using formula Remaining Runs / Remaining overs.
+
+* Create CricketTest class with main method.
+   * Using scanner to accept the target runs, current over, current score
+   * Create object of Oneday cricket with the accepted target runs 
+   * Set the current over and current score
+   * Display the current Run rate and Required run rate in the output
+
+		Sample Input :
+		Enter Target Runs
+		250
+		Enter Current Over
+		25
+		Enter Current Score
+		125
+		
+		Sample Output :
+	       Current Run Rate
+	      5.0
+	      Required Run Rate
+	      5.0

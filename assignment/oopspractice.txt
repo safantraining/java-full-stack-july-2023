@@ -1,0 +1,39 @@
+
+1 – Aggregation and Encapsulation
+Create a class named Address with following private member variables
+•	addressLine of type String
+•	city of type String
+
+•	Create a parameterized constructor. Include Getters and setters.
+•	Include method getAddressDetails() which returns a String with address details in below format
+Ist Main HSR Layout, Bangalore
+
+Create a class Customer with following private member variables
+•	customerName of type String
+•	residentialAddress of type Address (HAS –A relation)
+
+Include a default constructor
+Create parameterized constructor which takes 2 parameters and initialize member variables
+Include Getters and Setters.
+Create method getCustomerDetails which returns a String with Customer details in below format
+Customer : John
+Residential Address : Ist Main HSR Layout, Bangalore
+
+Create a class TestCustomer with a main method
+•	Create an object of Customer with default constructor. Use setters to assign values to the member variables. Display the values of member variables using getters.
+•	Create an object of Customer using parameterized constructor and display all the details of the customer using getCustomerDetails method
+
+
+2 – Encapsulation & Inheritance
+a)	Create a class Book which has following members:
+	private int bookNo
+private String title
+private String author
+private float price
+	Provide getter and setter methods for all the instance variables.
+Create a class BookDetails which has the main method. Create an object of the Book class.  Initialize the object by reading inputs for the fields from the user. 
+
+b)	Extend the Book class to create a class EngineeringBook derived from Book with an additional attribute
+		private String category 	
+Provide setter and getter methods for type instance variable.
+Create an object of the EngineeringBook class  and test.
