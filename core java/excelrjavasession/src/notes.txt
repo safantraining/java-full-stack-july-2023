@@ -1,0 +1,386 @@
+day2:-
+-------------
+difference between print and println.
+
+keyowrds:-
+--------------
+  for,while,int,switch,...
+   reserverd world,else, if,...
+
+Identifier:-
+---------------
+   class name,method name, variable name are the identifiler.
+   class Test    ------> Test is the identifier
+   {
+      int a;     ------> a is the identifier
+      
+      void test()   ----> test is the identifier
+      {
+      
+      }
+      
+      void for()  // wrong
+      {
+      
+      }
+      int for=1;  //wrong
+   }
+   
+   
+     keywords should not be the identifier
+--------------------------------------------------------------------------------------
+Java Data types:-
+----------------------
+
+primitive     and    non-primitive:-
+----------------------------------------------
+
+
+primitive data type:-
+------------------------
+    1)Integer
+    ---------------            range
+         byte   ---> 1 byte    -128 to 127
+         short  ---> 2 byte
+         int    ---> 4 byte
+         long   ---> 8 byte
+         
+            1 byte= 8 bits
+              
+              bits-1
+            2        -1
+              8-1
+            2     -1
+              2*2*2*2*2*2*2
+                = 128 - 1
+                
+              -128 to 127
+         
+    2)Floating point
+    -------------------
+       float     ---> 4 byte            
+       double    ---> 8 byte 
+      
+    3)character
+    --------------
+       char
+    4)boolean
+    --------------
+        boolean    
+
+
+Non-primitive:-
+------------------
+classes, arrays and interface.
+
+
+
+Note:-
+--------
+   in char we can store only single character,
+   to store more than one character java provides 3 inbuilt class.
+      String
+      StringBuffer
+      StringBuilder
+
+
+
+ascii:-
+-------------  
+65 - A
+66 -B
+.........
+
+
+97 -a 
+98-b
+99-c
+================================================================================
+type casting:-
+-------------------
+   converting from one type to another type.
+   
+     size increasing order
+     
+      1       2      4      8      4        8
+     byte-->short-->int-->long-->float-->double-->
+     
+     
+     2 types of casting:-
+     --------------------
+        1) implicit casting.
+        2) explicit casting.
+   
+    implicit:-
+    -----------
+         It will be automatically done by the compiler.
+         
+         storing smaller type value in the larger datatype.
+         eg:-
+         ----
+             storing int in double
+                      4       8
+    explicit:-
+    -----------
+         manually developer has to do.
+         (compiler is not responsible)     
+   
+----------------------------------------------------------------------------------
+day3:-
+---------
+   operators:-
+   -------------
+     Arithemtic     + , - ,/ % , 
+     Relational/comparison    >,<,>=,<=, ==, !=
+     increment/decrement ++ ,--
+     logical   &&
+     bitwsise  &
+     assignment operator.
+     ternary operator.
+    
+     12--> 1100
+     4-->  0100
+          ----------
+            0100
+            ---------
+-----------------------------------------------------------
+-------------------------------------------------------------
+swap two variable without 3rd variable:-
+------------------------------------------------------------
+
+conditio stmt:-
+-------------------
+if
+if else
+if else if
+
+looping stmt:-
+------------------
+
+----> sum of a digit:-
+=================================================
+day4:-
+--------
+  Array:-
+  --------
+  ->Array is nothing but, collection of similar values(same type) 
+              (or)
+  
+  -> Collection of homogeneous element.
+  -> in array we use index operator [], to access element from particular index.
+  
+  adv:-
+  ------
+     --> in a single variable we store more values.
+     --> random access
+  
+  disadv:-
+  --------
+     --> size is fixed
+     --> homogeneous type.
+     
+how to create an array:-
+--------------------------
+   3 ways:-
+   -------
+   
+   1st way:-
+   --------
+      int a[];   // array declaration
+     
+      a = new int[5]; // array instancation
+     
+      a[0]=1;        // array initilization
+      a[1]=4;     
+  
+  2nd way:-
+  ----------
+      int a[]= new int[5]; // declaration + instancation
+      a[0]=3;
+      a[3]=5;
+      
+  3rd way:-
+  ---------
+      int a[] = {1,2,3,4};  // declaration + initilization
+           
+
+types of array:-
+--------------
+ 1)single
+ 2)multidimensional
+ 3)Jagged Array   ---> columns are not even.
+
+===================================================================
+oops:-
+----------
+ Object Oriented Programming System.
+ 
+ why we use oops..?
+ ---------------------
+ ->It is a programming paradigm or design pattern to design the
+ software based on real world object.
+ 
+ -> real world objects:-
+    --------------------
+       car
+       building 
+       person
+       
+       (object means , It can be any thing, name,place, thing).
+    
+    inside oops we have,
+       1)class
+       2) objects
+           4 features:-
+           -------------
+           1)abstraction
+           2)Encapsulation
+           3)Inheritance
+           4)polymorphism
+                 
+  Class:-
+  ---------
+   1)It is a blue print of object
+        (or)
+    It is a template, to create the object.     
+       eg:-
+       ----
+            blue               object
+         car design            Audi
+         building plan         Building
+  
+  
+  2)It will have state and behaviour
+               ( variable)  (functions/methods) 
+               
+        Car 
+          --> color,price,brandName   --> variable.
+          --> checkMilage(), carMovement() --> behaviour        
+   
+  3)It is a collection of object.                
+  4)It will have constructor.
+  
+  syntax:-
+  ---------
+  class classname
+  {
+  
+  }
+  
+  
+Object:-
+----------
+   1)It is the instance of a class.
+   2)Object describe the state and behaviour   
+  
+  Syntax to create the object:-
+  ------------------------------
+  clasname objectname = new classname();
+  
+  
+Constructor:-
+----------------
+  why we use:-
+  --------------
+    -> It is used to initilize the object.
+             (or)
+        to initilize the variable values.
+  
+  Rules for Constructor:-  
+  ------------------------
+      -->It is same as class name.
+      -->It is like a method, but it does not have return type
+      -->It will be called automatically when you create the objects.
+         
+  Note:-
+  --------
+     compiler will add, default constructor to java class.
+     
+  types:-
+  --------
+     default.
+     parameterized.              
+ ==========================================================
+ day 5:-
+ ---------
+ 
+ Access modifier:-
+ -----------------
+              with in the    with in the        outside the package      any package
+              class          package            by subclass
+                            (same package)      (different package)      
+ private      yes             no                   no                       no
+ 
+ 
+ default      yes            yes                   no                       no
+ 
+ 
+ protected    yes             yes                yes                        no
+ 
+ 
+ public        yes            yes                  yes                      yes
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+      
+  
+  
+  
+  
+  
+  
+       
+       
+       
+       
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
